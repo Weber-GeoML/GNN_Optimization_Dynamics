@@ -10,6 +10,8 @@ from torch.optim.lr_scheduler import ReduceLROnPlateau
 from torcheval.metrics import MultilabelAUPRC
 from math import inf
 
+import wandb
+
 import random
 from torch.utils.data import Dataset, Subset
 
@@ -43,6 +45,8 @@ default_args = AttrDict(
 
 class Experiment:
     def __init__(self, args=None, dataset=None, train_dataset=None, validation_dataset=None, test_dataset=None):
+        # Initialize W&B with project name and experiment configuration
+        wandb.init(project="your_project_name", config=args)
         self.args = default_args + args
         self.dataset = dataset
         self.train_dataset = train_dataset
@@ -59,7 +63,7 @@ class Experiment:
             try:
                 self.args.input_dim = self.dataset[0].x.shape[1]
             except:
-                self.args.input_dim = 9 # peptides-func
+                self.args.input_dim = 9  # peptides-func
         for graph in self.dataset:
             if not "edge_type" in graph.keys:
                 num_edges = graph.edge_index.shape[1]
@@ -80,10 +84,8 @@ class Experiment:
             train_size = int(self.args.train_fraction * dataset_size)
             validation_size = int(self.args.validation_fraction * dataset_size)
             test_size = dataset_size - train_size - validation_size
-            # self.train_dataset, self.validation_dataset, self.test_dataset = random_split(self.dataset,[train_size, validation_size, test_size])
             self.train_dataset, self.validation_dataset, self.test_dataset, self.categories = custom_random_split(self.dataset, [self.args.train_fraction, self.args.validation_fraction, self.args.test_fraction])
         elif self.validation_dataset is None:
-            print("self.validation_dataset is None. Custom split will not be used.")
             train_size = int(self.args.train_fraction * len(self.train_dataset))
             validation_size = len(self.args.train_data) - train_size
             self.args.train_data, self.args.validation_data = random_split(self.args.train_data, [train_size, validation_size])
@@ -103,13 +105,7 @@ class Experiment:
         train_loader = DataLoader(self.train_dataset, batch_size=self.args.batch_size, shuffle=True)
         validation_loader = DataLoader(self.validation_dataset, batch_size=self.args.batch_size, shuffle=True)
         test_loader = DataLoader(self.test_dataset, batch_size=self.args.batch_size, shuffle=True)
-        # complete_loader = DataLoader(self.dataset, batch_size=self.args.batch_size, shuffle=True)
         complete_loader = DataLoader(self.dataset, batch_size=1)
-
-        # create a dictionary of the graphs in the dataset with the key being the graph index
-        graph_dict = {}
-        for i in range(len(self.dataset)):
-            graph_dict[i] = -1
 
         for epoch in range(1, 1 + self.args.max_epochs):
             self.model.train()
@@ -127,83 +123,42 @@ class Experiment:
                 optimizer.step()
                 optimizer.zero_grad()
 
-            new_best_str = ''
             scheduler.step(total_loss)
+
+            # Evaluate and log metrics with W&B after each epoch
             if epoch % self.args.eval_every == 0:
-                if self.args.output_dim == 10: # peptides-func
-                    train_acc = self.test(loader=train_loader)
-                    validation_acc = self.test(loader=validation_loader)
-                    test_acc = self.test(loader=test_loader)
-                else:
-                    train_acc = self.eval(loader=train_loader)
-                    validation_acc = self.eval(loader=validation_loader)
-                    test_acc = self.eval(loader=test_loader)
+                train_acc = self.eval(loader=train_loader)
+                validation_acc = self.eval(loader=validation_loader)
+                test_acc = self.eval(loader=test_loader)
 
-                if self.args.stopping_criterion == "train":
-                    if train_acc > train_goal:
-                        best_train_acc = train_acc
-                        best_validation_acc = validation_acc
-                        best_test_acc = test_acc
-                        epochs_no_improve = 0
-                        train_goal = train_acc * self.args.stopping_threshold
-                        new_best_str = ' (new best train)'
-                    elif train_acc > best_train_acc:
-                        best_train_acc = train_acc
-                        best_validation_acc = validation_acc
-                        best_test_acc = test_acc
-                        epochs_no_improve += 1
-                    else:
-                        epochs_no_improve += 1
-                elif self.args.stopping_criterion == 'validation':
-                    if validation_acc > validation_goal:
-                        best_train_acc = train_acc
-                        best_validation_acc = validation_acc
-                        best_test_acc = test_acc
-                        epochs_no_improve = 0
-                        validation_goal = validation_acc * self.args.stopping_threshold
-                        new_best_str = ' (new best validation)'
-                        best_model = copy.deepcopy(self.model)
-                    elif validation_acc > best_validation_acc:
-                        best_train_acc = train_acc
-                        best_validation_acc = validation_acc
-                        best_test_acc = test_acc
-                        epochs_no_improve += 1
-                    else:
-                        epochs_no_improve += 1
+                # Log metrics to W&B
+                wandb.log({
+                    "epoch": epoch,
+                    "loss": total_loss.item(),
+                    "train_accuracy": train_acc,
+                    "validation_accuracy": validation_acc,
+                    "test_accuracy": test_acc
+                })
+
                 if self.args.display:
-                    print(f'Epoch {epoch}, Train acc: {train_acc}, Validation acc: {validation_acc}{new_best_str}, Test acc: {test_acc}')
+                    print(f'Epoch {epoch}, Loss: {total_loss.item()}, Train acc: {train_acc}, Validation acc: {validation_acc}, Test acc: {test_acc}')
+
+                # Early stopping based on validation accuracy
+                if validation_acc > validation_goal:
+                    best_model = copy.deepcopy(self.model)
+                    validation_goal = validation_acc * self.args.stopping_threshold
+                    epochs_no_improve = 0
+                else:
+                    epochs_no_improve += 1
+
                 if epochs_no_improve > self.args.patience:
-                    if self.args.display:
-                        print(f'{self.args.patience} epochs without improvement, stopping training')
-                        print(f'Best train acc: {best_train_acc}, Best validation acc: {best_validation_acc}, Best test acc: {best_test_acc}')
-                        energy = 0
+                    print(f'{self.args.patience} epochs without improvement, stopping training')
+                    torch.save(best_model.state_dict(), "model.pth")
+                    print("Saved model in directory: ", os.getcwd())
+                    break
 
-                        # evaluate the model on all graphs in the dataset
-                        # and record the error for each graph in the dictionary
-                        assert best_model != self.model, "Best model is the same as the current model"
-                        for graph, i in zip(complete_loader, range(len(self.dataset))):
-                            if i not in self.categories[0]:
-                                graph = graph.to(self.args.device)
-                                y = graph.y.to(self.args.device)
-                                out = best_model(graph)
-                                _, pred = out.max(dim=1)
-                                graph_dict[i] = pred.eq(y).sum().item()
-                        print("Computed error for each graph in the val and test dataset")
-
-                        # save the model
-                        torch.save(best_model.state_dict(), "model.pth")
-                        
-                        # get the current directory and print it
-                        print("Saved model in directory: ", os.getcwd())
-
-                    return best_train_acc, best_validation_acc, best_test_acc, energy, graph_dict
-                
-        if self.args.display:
-            print('Reached max epoch count, stopping training')
-            print(f'Best train acc: {best_train_acc}, Best validation acc: {best_validation_acc}, Best test acc: {best_test_acc}')
-
-        energy = 0
-        return best_train_acc, best_validation_acc, best_test_acc, energy, graph_dict
+        wandb.finish()
+        return best_train_acc, best_validation_acc, best_test_acc
 
     def eval(self, loader):
         self.model.eval()
