@@ -102,18 +102,12 @@ class Experiment:
         train_goal = 0.0
         validation_goal = 0.0
         epochs_no_improve = 0
-        best_model = copy.deepcopy(self.model)
 
         train_loader = DataLoader(self.train_dataset, batch_size=self.args.batch_size, shuffle=True)
         validation_loader = DataLoader(self.validation_dataset, batch_size=self.args.batch_size, shuffle=True)
         test_loader = DataLoader(self.test_dataset, batch_size=self.args.batch_size, shuffle=True)
         # complete_loader = DataLoader(self.dataset, batch_size=self.args.batch_size, shuffle=True)
         complete_loader = DataLoader(self.dataset, batch_size=1)
-
-        # create a dictionary of the graphs in the dataset with the key being the graph index
-        graph_dict = {}
-        for i in range(len(self.dataset)):
-            graph_dict[i] = -1
 
         for epoch in range(1, 1 + self.args.max_epochs):
             self.model.train()
@@ -162,7 +156,6 @@ class Experiment:
                         epochs_no_improve = 0
                         validation_goal = validation_mae * self.args.stopping_threshold
                         new_best_str = ' (new best validation)'
-                        best_model = copy.deepcopy(self.model)
                     elif validation_mae < best_validation_mae:
                         best_train_mae = train_mae
                         best_validation_mae = validation_mae
@@ -178,33 +171,14 @@ class Experiment:
                         print(f'Best train mae: {train_mae}, Best validation mae: {validation_mae}, Best test mae: {test_mae}')
                         energy = 0
 
-                        # evaluate the model on all graphs in the dataset
-                        # and record the error for each graph in the dictionary
-                        # assert best_model != self.model, "Best model is the same as the current model"
-                        for graph, i in zip(complete_loader, range(len(self.dataset))):
-                            if i in self.categories[2]:
-                                graph = graph.to(self.args.device)
-                                y = graph.y.to(self.args.device)
-                                # out = best_model(graph)
-                                out = self.model(graph.x, graph.edge_index, graph.edge_attr, graph.batch)
-                                # _, pred = out.max(dim=1)
-                                graph_dict[i] = (out.squeeze() - y).abs().sum().item()
-                        print("Computed error for each graph in the test dataset")
-
-                        # save the model
-                        torch.save(best_model.state_dict(), "model.pth")
-                        
-                        # get the current directory and print it
-                        print("Saved model in directory: ", os.getcwd())
-
-                    return train_mae, validation_mae, test_mae, energy, graph_dict
+                    return train_mae, validation_mae, test_mae
                 
         if self.args.display:
             print('Reached max epoch count, stopping training')
             print(f'Best train mae: {best_train_mae}, Best validation mae: {best_validation_mae}, Best test mae: {best_test_mae}')
 
         energy = 0
-        return best_train_mae, best_validation_mae, best_test_mae, energy, graph_dict
+        return best_train_mae, best_validation_mae, best_test_mae
 
     def eval(self, loader):
         self.model.eval()
