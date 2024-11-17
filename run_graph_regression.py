@@ -47,27 +47,27 @@ peptides_test = torch.load(os.path.join(lrgb_path, "peptidesstruct", "test.pt"))
 peptides_struct = [_convert_lrgb(peptides_train[i]) for i in range(len(peptides_train))] + [_convert_lrgb(peptides_val[i]) for i in range(len(peptides_val))] + [_convert_lrgb(peptides_test[i]) for i in range(len(peptides_test))]
 
 max_degree_path = 'synthetic_data/max_degree_task'
-with open(os.join(max_degree_path, 'complete_graphs.pkl'), 'rb') as file:
+with open(os.path.join(max_degree_path, 'complete_graphs.pkl'), 'rb') as file:
     max_complete = pickle.load(file)
-with open(os.join(max_degree_path, 'cycle_graphs.pkl'), 'rb') as file:
+with open(os.path.join(max_degree_path, 'cycle_graphs.pkl'), 'rb') as file:
     max_cycle = pickle.load(file)
-with open(os.join(max_degree_path, 'path_graphs.pkl'), 'rb') as file:
+with open(os.path.join(max_degree_path, 'path_graphs.pkl'), 'rb') as file:
     max_path = pickle.load(file)
-with open(os.join(max_degree_path, 'regular_graphs.pkl'), 'rb') as file:
+with open(os.path.join(max_degree_path, 'regular_graphs.pkl'), 'rb') as file:
     max_regular = pickle.load(file)
-with open(os.join(max_degree_path, 'tree_graphs.pkl'), 'rb') as file:
+with open(os.path.join(max_degree_path, 'tree_graphs.pkl'), 'rb') as file:
     max_tree = pickle.load(file)
 
 min_distance_path = 'synthetic_data/shortest_path_task'
-with open(os.join(min_distance_path, 'complete_graphs.pkl'), 'rb') as file:
+with open(os.path.join(min_distance_path, 'complete_graphs.pkl'), 'rb') as file:
     min_complete = pickle.load(file)
-with open(os.join(min_distance_path, 'cycle_graphs.pkl'), 'rb') as file:
+with open(os.path.join(min_distance_path, 'cycle_graphs.pkl'), 'rb') as file:
     min_cycle = pickle.load(file)
-with open(os.join(min_distance_path, 'path_graphs.pkl'), 'rb') as file:
+with open(os.path.join(min_distance_path, 'path_graphs.pkl'), 'rb') as file:
     min_path = pickle.load(file)
-with open(os.join(min_distance_path, 'regular_graphs.pkl'), 'rb') as file:
+with open(os.path.join(min_distance_path, 'regular_graphs.pkl'), 'rb') as file:
     min_regular = pickle.load(file)
-with open(os.join(min_distance_path, 'tree_graphs.pkl'), 'rb') as file:
+with open(os.path.join(min_distance_path, 'tree_graphs.pkl'), 'rb') as file:
     min_tree = pickle.load(file)
 
 datasets = {"zinc": zinc, "peptides_struct": peptides_struct, "max_complete": max_complete, "max_cycle": max_cycle, "max_path": max_path, "max_regular": max_regular, "max_tree": max_tree, "min_complete": min_complete, "min_cycle": min_cycle, "min_path": min_path, "min_regular": min_regular, "min_tree": min_tree}
