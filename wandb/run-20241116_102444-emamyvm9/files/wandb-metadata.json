@@ -1,0 +1,96 @@
+{
+  "os": "Linux-4.18.0-513.18.1.el8_9.x86_64-x86_64-with-glibc2.28",
+  "python": "3.9.13",
+  "startedAt": "2024-11-16T15:24:44.777721Z",
+  "args": [
+    "--dataset",
+    "peptides_func",
+    "--layer_type",
+    "GCN",
+    "--num_layers",
+    "4",
+    "--num_trials",
+    "1",
+    "--patience",
+    "150"
+  ],
+  "program": "/n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/run_graph_classification.py",
+  "codePath": "run_graph_classification.py",
+  "git": {
+    "remote": "https://LFesser97:@github.com/Weber-GeoML/GNN_Optimization_Dynamics.git",
+    "commit": "705790016326ec48b27565cd720d5966fe35437a"
+  },
+  "email": "lukas_fesser@fas.harvard.edu",
+  "root": "/n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics",
+  "host": "holygpu8a22406.rc.fas.harvard.edu",
+  "username": "lfesser",
+  "executable": "/n/home07/lfesser/.conda/envs/borf/bin/python",
+  "codePathLocal": "run_graph_classification.py",
+  "cpu_count": 64,
+  "cpu_count_logical": 64,
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "53660876800",
+      "used": "15849226240"
+    }
+  },
+  "memory": {
+    "total": "1081284939776"
+  },
+  "cpu": {
+    "count": 64,
+    "countLogical": 64
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA A100-SXM4-80GB",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    }
+  ],
+  "slurm": {
+    "cluster_name": "odyssey",
+    "conf": "/etc/slurm/slurm.conf",
+    "cpus_on_node": "1",
+    "cpus_per_task": "1",
+    "export_env": "NONE",
+    "get_user_env": "1",
+    "gpus_on_node": "1",
+    "gtids": "0",
+    "job_account": "mweber_lab",
+    "job_cpus_per_node": "1",
+    "job_end_time": "1731775928",
+    "job_gid": "10702",
+    "job_gpus": "2",
+    "job_id": "57775983",
+    "job_name": ".fasrcood/sys/dashboard/sys/Jupyter",
+    "job_nodelist": "holygpu8a22406",
+    "job_num_nodes": "1",
+    "job_partition": "gpu",
+    "job_qos": "normal",
+    "job_start_time": "1731689528",
+    "job_uid": "63061",
+    "job_user": "lfesser",
+    "jobid": "57775983",
+    "localid": "0",
+    "mem_per_node": "51200",
+    "nnodes": "1",
+    "nodeid": "0",
+    "nodelist": "holygpu8a22406",
+    "prio_process": "0",
+    "procid": "0",
+    "script_context": "prolog_task",
+    "stepmgr": "holygpu8a22406",
+    "submit_dir": "/var/www/ood/apps/sys/dashboard",
+    "submit_host": "b-cannonooda-01",
+    "task_pid": "4087797",
+    "tasks_per_node": "1",
+    "topology_addr": "main.holyoke.holyndr.holygpu8a22406",
+    "topology_addr_pattern": "switch.switch.switch.node",
+    "tres_per_task": "cpu=1"
+  },
+  "cudaVersion": "12.5"
+}

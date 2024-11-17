@@ -1,0 +1,16 @@
+{"time":"2024-11-16T10:28:01.066123235-05:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-16T10:28:01.066135162-05:00","level":"INFO","msg":"created symlink","path":"/n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/wandb/run-20241116_102800-rjecl1kt/logs/debug-core.log"}
+{"time":"2024-11-16T10:28:01.192621972-05:00","level":"INFO","msg":"created new stream","id":"rjecl1kt"}
+{"time":"2024-11-16T10:28:01.192638602-05:00","level":"INFO","msg":"stream: started","id":"rjecl1kt"}
+{"time":"2024-11-16T10:28:01.193382491-05:00","level":"INFO","msg":"handler: started","stream_id":"rjecl1kt"}
+{"time":"2024-11-16T10:28:01.1934029-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"rjecl1kt"}
+{"time":"2024-11-16T10:28:01.193512187-05:00","level":"INFO","msg":"sender: started","stream_id":"rjecl1kt"}
+{"time":"2024-11-16T10:28:01.469014932-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-16T10:28:10.541615904-05:00","level":"INFO","msg":"stream: closing","id":"rjecl1kt"}
+{"time":"2024-11-16T10:28:10.541771396-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-16T10:28:10.544104407-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-16T10:28:11.840059198-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-16T10:28:11.960266982-05:00","level":"INFO","msg":"handler: closed","stream_id":"rjecl1kt"}
+{"time":"2024-11-16T10:28:11.960277349-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":"rjecl1kt"}
+{"time":"2024-11-16T10:28:11.960386618-05:00","level":"INFO","msg":"sender: closed","stream_id":"rjecl1kt"}
+{"time":"2024-11-16T10:28:12.000148659-05:00","level":"INFO","msg":"stream: closed","id":"rjecl1kt"}

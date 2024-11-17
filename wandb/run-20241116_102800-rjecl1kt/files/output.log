@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/run_graph_classification.py", line 182, in <module>
+    train_acc, validation_acc, test_acc = Experiment(args=args, dataset=dataset).run()
+  File "/n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/experiments/graph_classification.py", line 130, in run
+    if dataset_size < 10000:
+NameError: name 'dataset_size' is not defined

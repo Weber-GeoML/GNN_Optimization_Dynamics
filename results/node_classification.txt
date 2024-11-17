@@ -42,3 +42,15 @@ RESULTS FOR chameleon (brf):
 average acc: 0.5926973684210526
 plus/minus:  0.019687643847154115
 
+RESULTS FOR roman_empire (None):
+average acc: 0.2783268619837628
+plus/minus:  0.0
+
+RESULTS FOR roman_empire (None):
+average acc: 0.14772326156018356
+plus/minus:  0.0
+
+RESULTS FOR roman_empire (None):
+average acc: 0.20278856336039533
+plus/minus:  0.0
+

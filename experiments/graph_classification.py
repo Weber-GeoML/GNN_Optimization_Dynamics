@@ -46,7 +46,7 @@ default_args = AttrDict(
 class Experiment:
     def __init__(self, args=None, dataset=None, train_dataset=None, validation_dataset=None, test_dataset=None):
         # Initialize W&B with project name and experiment configuration
-        wandb.init(project="your_project_name", config=args)
+        wandb.init(project="gnn_optimization_dynamics", config=args)
         self.args = default_args + args
         self.dataset = dataset
         self.train_dataset = train_dataset
@@ -127,9 +127,15 @@ class Experiment:
 
             # Evaluate and log metrics with W&B after each epoch
             if epoch % self.args.eval_every == 0:
-                train_acc = self.eval(loader=train_loader)
-                validation_acc = self.eval(loader=validation_loader)
-                test_acc = self.eval(loader=test_loader)
+                if len(self.dataset) < 10000:
+                    train_acc = self.eval(loader=train_loader)
+                    validation_acc = self.eval(loader=validation_loader)
+                    test_acc = self.eval(loader=test_loader)
+                    
+                else:
+                    train_acc = self.test(loader=train_loader)
+                    validation_acc = self.test(loader=validation_loader)
+                    test_acc = self.test(loader=test_loader)
 
                 # Log metrics to W&B
                 wandb.log({
@@ -153,8 +159,6 @@ class Experiment:
 
                 if epochs_no_improve > self.args.patience:
                     print(f'{self.args.patience} epochs without improvement, stopping training')
-                    torch.save(best_model.state_dict(), "model.pth")
-                    print("Saved model in directory: ", os.getcwd())
                     break
 
         wandb.finish()

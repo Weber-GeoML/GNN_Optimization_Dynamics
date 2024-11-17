@@ -1,0 +1,17 @@
+{"time":"2024-11-15T15:34:01.905253767-05:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-15T15:34:01.905266543-05:00","level":"INFO","msg":"created symlink","path":"/n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/wandb/run-20241115_153401-02nce3h6/logs/debug-core.log"}
+{"time":"2024-11-15T15:34:02.06490422-05:00","level":"INFO","msg":"created new stream","id":"02nce3h6"}
+{"time":"2024-11-15T15:34:02.064920771-05:00","level":"INFO","msg":"stream: started","id":"02nce3h6"}
+{"time":"2024-11-15T15:34:02.064941067-05:00","level":"INFO","msg":"handler: started","stream_id":"02nce3h6"}
+{"time":"2024-11-15T15:34:02.064955757-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"02nce3h6"}
+{"time":"2024-11-15T15:34:02.065053292-05:00","level":"INFO","msg":"sender: started","stream_id":"02nce3h6"}
+{"time":"2024-11-15T15:34:02.332554463-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T15:34:25.174211389-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T15:34:25.176673894-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-15T15:34:26.174404182-05:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.89941347}],"total_operations":1}}
+{"time":"2024-11-15T15:34:27.127751442-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-15T15:34:28.432032665-05:00","level":"INFO","msg":"stream: closing","id":"02nce3h6"}
+{"time":"2024-11-15T15:34:28.432046287-05:00","level":"INFO","msg":"handler: closed","stream_id":"02nce3h6"}
+{"time":"2024-11-15T15:34:28.432052069-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":"02nce3h6"}
+{"time":"2024-11-15T15:34:28.43217869-05:00","level":"INFO","msg":"sender: closed","stream_id":"02nce3h6"}
+{"time":"2024-11-15T15:34:28.441382413-05:00","level":"INFO","msg":"stream: closed","id":"02nce3h6"}

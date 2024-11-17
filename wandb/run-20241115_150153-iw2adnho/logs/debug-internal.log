@@ -1,0 +1,16 @@
+{"time":"2024-11-15T15:01:53.126319611-05:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-15T15:01:53.126332194-05:00","level":"INFO","msg":"created symlink","path":"/n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/wandb/run-20241115_150153-iw2adnho/logs/debug-core.log"}
+{"time":"2024-11-15T15:01:53.251884728-05:00","level":"INFO","msg":"created new stream","id":"iw2adnho"}
+{"time":"2024-11-15T15:01:53.251906933-05:00","level":"INFO","msg":"stream: started","id":"iw2adnho"}
+{"time":"2024-11-15T15:01:53.252683761-05:00","level":"INFO","msg":"handler: started","stream_id":"iw2adnho"}
+{"time":"2024-11-15T15:01:53.25270488-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"iw2adnho"}
+{"time":"2024-11-15T15:01:53.252816846-05:00","level":"INFO","msg":"sender: started","stream_id":"iw2adnho"}
+{"time":"2024-11-15T15:01:53.506503747-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T15:31:17.504043219-05:00","level":"INFO","msg":"stream: closing","id":"iw2adnho"}
+{"time":"2024-11-15T15:31:17.504148497-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T15:31:17.506562642-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-15T15:31:18.882224693-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-15T15:31:19.049616832-05:00","level":"INFO","msg":"handler: closed","stream_id":"iw2adnho"}
+{"time":"2024-11-15T15:31:19.049630267-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":"iw2adnho"}
+{"time":"2024-11-15T15:31:19.049749466-05:00","level":"INFO","msg":"sender: closed","stream_id":"iw2adnho"}
+{"time":"2024-11-15T15:31:19.05459669-05:00","level":"INFO","msg":"stream: closed","id":"iw2adnho"}

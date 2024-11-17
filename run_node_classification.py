@@ -87,7 +87,7 @@ else:
     tolokers = HeterophilousGraphDataset(root=platonov_path, name="Tolokers", transform=largest_cc)
     questions = HeterophilousGraphDataset(root=platonov_path, name="Questions", transform=largest_cc)
 
-datasets = {roman_empire: "roman_empire", amazon_ratings: "amazon_ratings", minesweeper: "minesweeper", tolokers: "tolokers", questions: "questions"}
+datasets = {"roman_empire": roman_empire, "amazon_ratings": amazon_ratings, "minesweeper": minesweeper, "tolokers": tolokers, "questions": questions}
 
 for key in datasets:
     dataset = datasets[key]

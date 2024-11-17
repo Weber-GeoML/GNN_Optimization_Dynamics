@@ -1,0 +1,17 @@
+{"time":"2024-11-15T11:09:59.498701849-05:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-15T11:09:59.498713539-05:00","level":"INFO","msg":"created symlink","path":"/n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/wandb/run-20241115_110959-il91d4dw/logs/debug-core.log"}
+{"time":"2024-11-15T11:09:59.672053901-05:00","level":"INFO","msg":"created new stream","id":"il91d4dw"}
+{"time":"2024-11-15T11:09:59.672069417-05:00","level":"INFO","msg":"stream: started","id":"il91d4dw"}
+{"time":"2024-11-15T11:09:59.672092717-05:00","level":"INFO","msg":"handler: started","stream_id":"il91d4dw"}
+{"time":"2024-11-15T11:09:59.672106533-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"il91d4dw"}
+{"time":"2024-11-15T11:09:59.672204159-05:00","level":"INFO","msg":"sender: started","stream_id":"il91d4dw"}
+{"time":"2024-11-15T11:09:59.891347752-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T11:10:47.32537076-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T11:10:47.32793008-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-15T11:10:48.009293327-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-15T11:10:48.131599819-05:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2024-11-15T11:10:49.183912716-05:00","level":"INFO","msg":"stream: closing","id":"il91d4dw"}
+{"time":"2024-11-15T11:10:49.1839188-05:00","level":"INFO","msg":"handler: closed","stream_id":"il91d4dw"}
+{"time":"2024-11-15T11:10:49.183923448-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":"il91d4dw"}
+{"time":"2024-11-15T11:10:49.184176894-05:00","level":"INFO","msg":"sender: closed","stream_id":"il91d4dw"}
+{"time":"2024-11-15T11:10:49.193440258-05:00","level":"INFO","msg":"stream: closed","id":"il91d4dw"}

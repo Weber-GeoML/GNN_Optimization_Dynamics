@@ -1,0 +1,48 @@
+RESULTS FOR mutag (None), 40 ITERATIONS:
+average acc: 0.0
+plus/minus:  0.0
+
+RESULTS FOR mutag (None), 40 ITERATIONS:
+average acc: 0.0
+plus/minus:  0.0
+
+RESULTS FOR enzymes (None), 40 ITERATIONS:
+average acc: 0.0
+plus/minus:  0.0
+
+RESULTS FOR proteins (None), 40 ITERATIONS:
+average acc: 0.0
+plus/minus:  0.0
+
+RESULTS FOR imdb (None), 40 ITERATIONS:
+average acc: 0.0
+plus/minus:  0.0
+
+RESULTS FOR mutag (None), 40 ITERATIONS:
+average acc: 0.0
+plus/minus:  0.0
+
+RESULTS FOR mutag (None), 40 ITERATIONS:
+average acc: 0.0
+plus/minus:  0.0
+
+RESULTS FOR mutag (None), 40 ITERATIONS:
+average acc: 0.0
+plus/minus:  0.0
+
+RESULTS FOR mutag (None), 40 ITERATIONS:
+average acc: 0.0
+plus/minus:  0.0
+
+RESULTS FOR enzymes (None), 40 ITERATIONS:
+average acc: 0.0
+plus/minus:  0.0
+
+RESULTS FOR enzymes (None), 40 ITERATIONS:
+average acc: 0.0
+plus/minus:  0.0
+
+RESULTS FOR peptides_func (None), 40 ITERATIONS:
+average acc: 0.0
+plus/minus:  0.0
+

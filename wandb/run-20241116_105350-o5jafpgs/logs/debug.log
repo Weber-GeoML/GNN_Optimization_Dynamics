@@ -1,0 +1,32 @@
+2024-11-16 10:53:51,205 INFO    MainThread:344694 [wandb_setup.py:_flush():79] Current SDK version is 0.18.7
+2024-11-16 10:53:51,205 INFO    MainThread:344694 [wandb_setup.py:_flush():79] Configure stats pid to 344694
+2024-11-16 10:53:51,205 INFO    MainThread:344694 [wandb_setup.py:_flush():79] Loading settings from /n/home07/lfesser/.config/wandb/settings
+2024-11-16 10:53:51,205 INFO    MainThread:344694 [wandb_setup.py:_flush():79] Loading settings from /n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/wandb/settings
+2024-11-16 10:53:51,205 INFO    MainThread:344694 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-11-16 10:53:51,205 INFO    MainThread:344694 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2024-11-16 10:53:51,205 INFO    MainThread:344694 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'run_graph_classification.py', 'program_abspath': '/n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/run_graph_classification.py', 'program': '/n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/run_graph_classification.py'}
+2024-11-16 10:53:51,205 INFO    MainThread:344694 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-11-16 10:53:51,205 INFO    MainThread:344694 [wandb_init.py:_log_setup():533] Logging user logs to /n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/wandb/run-20241116_105350-o5jafpgs/logs/debug.log
+2024-11-16 10:53:51,205 INFO    MainThread:344694 [wandb_init.py:_log_setup():534] Logging internal logs to /n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/wandb/run-20241116_105350-o5jafpgs/logs/debug-internal.log
+2024-11-16 10:53:51,205 INFO    MainThread:344694 [wandb_init.py:init():619] calling init triggers
+2024-11-16 10:53:51,205 INFO    MainThread:344694 [wandb_init.py:init():626] wandb.init called with sweep_config: {}
+config: {'patience': 100, 'num_layers': 16, 'rewiring': None, 'dataset': 'enzymes', 'eps': 0.001, 'mlp': True, 'num_iterations': 40, 'borf_batch_add': 20, 'num_trials': 1, 'layer_type': 'GCN', 'encoding': None, 'dropout': 0.5, 'hidden_dim': 64, 'display': True, 'learning_rate': 0.001, 'alpha': 0.1, 'last_layer_fa': False, 'sdrf_remove_edges': False, 'borf_batch_remove': 3, 'eval_every': 1, 'num_splits': 3, 'output_dim': 6}
+2024-11-16 10:53:51,205 INFO    MainThread:344694 [wandb_init.py:init():669] starting backend
+2024-11-16 10:53:51,205 INFO    MainThread:344694 [wandb_init.py:init():673] sending inform_init request
+2024-11-16 10:53:51,206 INFO    MainThread:344694 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-11-16 10:53:51,219 INFO    MainThread:344694 [wandb_init.py:init():686] backend started and connected
+2024-11-16 10:53:51,222 INFO    MainThread:344694 [wandb_init.py:init():781] updated telemetry
+2024-11-16 10:53:51,542 INFO    MainThread:344694 [wandb_init.py:init():814] communicating run to backend with 90.0 second timeout
+2024-11-16 10:53:51,833 INFO    MainThread:344694 [wandb_init.py:init():867] starting run threads in backend
+2024-11-16 10:53:53,923 INFO    MainThread:344694 [wandb_run.py:_console_start():2456] atexit reg
+2024-11-16 10:53:53,923 INFO    MainThread:344694 [wandb_run.py:_redirect():2305] redirect: wrap_raw
+2024-11-16 10:53:53,923 INFO    MainThread:344694 [wandb_run.py:_redirect():2370] Wrapping output streams.
+2024-11-16 10:53:53,923 INFO    MainThread:344694 [wandb_run.py:_redirect():2395] Redirects installed.
+2024-11-16 10:53:53,948 INFO    MainThread:344694 [wandb_init.py:init():911] run started, returning control to user process
+2024-11-16 10:56:41,387 INFO    MainThread:344694 [wandb_run.py:_finish():2155] finishing run weber-geoml-harvard-university/gnn_optimization_dynamics/o5jafpgs
+2024-11-16 10:56:41,436 INFO    MainThread:344694 [wandb_run.py:_atexit_cleanup():2420] got exitcode: 0
+2024-11-16 10:56:41,437 INFO    MainThread:344694 [wandb_run.py:_restore():2402] restore
+2024-11-16 10:56:41,437 INFO    MainThread:344694 [wandb_run.py:_restore():2408] restore done
+2024-11-16 10:56:43,764 INFO    MainThread:344694 [wandb_run.py:_footer_history_summary_info():3960] rendering history
+2024-11-16 10:56:43,765 INFO    MainThread:344694 [wandb_run.py:_footer_history_summary_info():3992] rendering summary
+2024-11-16 10:56:43,858 INFO    MainThread:344694 [wandb_run.py:_footer_sync_info():3921] logging synced files

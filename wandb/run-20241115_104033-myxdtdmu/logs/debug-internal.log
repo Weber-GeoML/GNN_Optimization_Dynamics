@@ -1,0 +1,17 @@
+{"time":"2024-11-15T10:40:33.989422008-05:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-15T10:40:33.989433205-05:00","level":"INFO","msg":"created symlink","path":"/n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/wandb/run-20241115_104033-myxdtdmu/logs/debug-core.log"}
+{"time":"2024-11-15T10:40:34.129708486-05:00","level":"INFO","msg":"created new stream","id":"myxdtdmu"}
+{"time":"2024-11-15T10:40:34.129725558-05:00","level":"INFO","msg":"stream: started","id":"myxdtdmu"}
+{"time":"2024-11-15T10:40:34.129749341-05:00","level":"INFO","msg":"handler: started","stream_id":"myxdtdmu"}
+{"time":"2024-11-15T10:40:34.129764486-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"myxdtdmu"}
+{"time":"2024-11-15T10:40:34.129863833-05:00","level":"INFO","msg":"sender: started","stream_id":"myxdtdmu"}
+{"time":"2024-11-15T10:40:34.386538419-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T10:40:47.371612896-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T10:40:47.374223615-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-15T10:40:47.881554286-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-15T10:40:48.012908003-05:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2024-11-15T10:40:49.064104992-05:00","level":"INFO","msg":"stream: closing","id":"myxdtdmu"}
+{"time":"2024-11-15T10:40:49.064111312-05:00","level":"INFO","msg":"handler: closed","stream_id":"myxdtdmu"}
+{"time":"2024-11-15T10:40:49.064115324-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":"myxdtdmu"}
+{"time":"2024-11-15T10:40:49.064362228-05:00","level":"INFO","msg":"sender: closed","stream_id":"myxdtdmu"}
+{"time":"2024-11-15T10:40:49.072131713-05:00","level":"INFO","msg":"stream: closed","id":"myxdtdmu"}

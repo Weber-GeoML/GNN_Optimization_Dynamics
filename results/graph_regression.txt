@@ -1,0 +1,8 @@
+RESULTS FOR zinc (None), 1 ITERATIONS:
+average acc: 0.9079590028285981
+plus/minus:  0.024110602101497274
+
+RESULTS FOR peptides_struct (None), 1 ITERATIONS:
+average acc: 0.32625453456028086
+plus/minus:  0.0
+

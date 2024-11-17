@@ -1,0 +1,9 @@
+Starting training
+Traceback (most recent call last):
+  File "/n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/run_node_classification.py", line 120, in <module>
+    train_acc, validation_acc, test_acc = Experiment(args=args, dataset=dataset).run()
+  File "/n/home07/lfesser/fasrc/GNNs/GNN_Optimization_Dynamics/experiments/node_classification.py", line 85, in run
+    batch = self.dataset.to(self.args.device)
+  File "/n/home07/lfesser/.conda/envs/borf/lib/python3.9/site-packages/torch_geometric/data/in_memory_dataset.py", line 175, in __getattr__
+    raise AttributeError(f"'{self.__class__.__name__}' object has no "
+AttributeError: 'HeterophilousGraphDataset' object has no attribute 'to'

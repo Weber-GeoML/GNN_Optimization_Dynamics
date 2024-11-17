@@ -9,6 +9,8 @@ from math import inf
 
 from models.node_model import GCN
 
+import wandb
+
 default_args = AttrDict(
     {"learning_rate": 1e-3,
     "max_epochs": 1000000,
@@ -35,7 +37,7 @@ default_args = AttrDict(
 class Experiment:
     def __init__(self, args=None, dataset=None, train_mask=None, validation_mask=None, test_mask=None):
         self.args = default_args + args
-        self.dataset = dataset
+        self.dataset = dataset.data
         self.train_mask = train_mask
         self.validation_mask = validation_mask
         self.test_mask = test_mask
@@ -62,6 +64,8 @@ class Experiment:
         elif self.validation_mask is None:
             non_test = [i for i in range(self.num_nodes) if not i in self.test_mask]
             self.train_mask, self.validation_mask = train_test_split(non_test, test_size=self.args.validation_fraction/(self.args.validation_fraction + self.args.train_fraction))
+        
+        wandb.init(project="gnn_optimization_dynamics", config=self.args.__dict__)
         
     def run(self):
         optimizer = torch.optim.Adam(self.model.parameters(), lr=self.args.learning_rate)
@@ -104,6 +108,15 @@ class Experiment:
                 train_acc = self.eval(batch=batch, mask=self.train_mask)
                 validation_acc = self.eval(batch=batch, mask=self.validation_mask)
                 test_acc = self.eval(batch=batch, mask=self.test_mask)
+                
+                # Log metrics to wandb
+                wandb.log({
+                    "epoch": epoch,
+                    "loss": loss.item(),
+                    "train_accuracy": train_acc,
+                    "validation_accuracy": validation_acc,
+                    "test_accuracy": test_acc,
+                })
 
                 if self.args.stopping_criterion == "train":
                     if train_acc > train_goal:
@@ -141,6 +154,7 @@ class Experiment:
                     if self.args.display:
                         print(f'{self.args.patience} epochs without improvement, stopping training')
                         print(f'Best train acc: {best_train_acc}, Best validation loss: {best_validation_acc}, Best test loss: {best_test_acc}')
+                    wandb.finish()
                     return train_acc, validation_acc, test_acc
 
     def eval(self, batch, mask):
