@@ -30,7 +30,7 @@ default_args = AttrDict(
     "test_fraction": 1-(0.083+0.83),
     "dropout": 0.5,
     "weight_decay": 1e-5,
-    "input_dim": None,
+    "input_dim": 10,
     "hidden_dim": 64,
     "output_dim": None,
     "hidden_layers": None,
@@ -90,7 +90,13 @@ class Experiment:
                 self.validation_dataset = self.dataset[10873:13204]
                 self.test_dataset = self.dataset[13204:]
                 self.categories = [[*range(10873)], [*range(10873, 13204)], [*range(13204, 15535)]]
-            elif dataset_size != 1000:
+            elif dataset_size == 1000:
+                print("Algorithmic task. Using 50/25/25 split.")
+                self.train_dataset = self.dataset[:500]
+                self.validation_dataset = self.dataset[500:750]
+                self.test_dataset = self.dataset[750:]
+                self.categories = [[*range(500)], [*range(500, 750)], [*range(750, 1000)]]
+            else:
                 print("self.test_dataset is None. Custom split for Zinc will be used.")
                 self.train_dataset = self.dataset[:10000]
                 self.validation_dataset = self.dataset[10000:11000]
