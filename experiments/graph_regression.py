@@ -90,7 +90,7 @@ class Experiment:
                 self.validation_dataset = self.dataset[10873:13204]
                 self.test_dataset = self.dataset[13204:]
                 self.categories = [[*range(10873)], [*range(10873, 13204)], [*range(13204, 15535)]]
-            else:
+            elif dataset_size != 1000:
                 print("self.test_dataset is None. Custom split for Zinc will be used.")
                 self.train_dataset = self.dataset[:10000]
                 self.validation_dataset = self.dataset[10000:11000]
