@@ -16,7 +16,7 @@ import tqdm
 import torch
 import numpy as np
 import pandas as pd
-from hyperparams import get_args_from_input
+from hyperparams import get_args_from_input, get_args_from_config
 from preprocessing import rewiring, sdrf, fosr, digl, borf
 
 import pickle
@@ -81,6 +81,7 @@ def log_to_file(message, filename="results/graph_regression.txt"):
 
 
 default_args = AttrDict({
+    "config_path": None,
     "dropout": 0.1,
     "num_layers": 16,
     "hidden_dim": 64,
@@ -114,6 +115,10 @@ for key in datasets:
 results = []
 args = default_args
 args += get_args_from_input()
+
+if args.config_path:
+    args += get_args_from_config(config=args.config_path)
+
 if args.dataset:
     # restricts to just the given dataset if this mode is chosen
     name = args.dataset

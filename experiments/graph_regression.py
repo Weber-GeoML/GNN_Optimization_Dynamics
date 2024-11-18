@@ -14,7 +14,7 @@ import wandb
 import random
 from torch.utils.data import Dataset, Subset
 
-from models.graph_regression_model import GNN, GINE, GPS
+from models.graph_regression_model import GNN, GINE, GPS, SANTransformer
 
 default_args = AttrDict(
     {"learning_rate": 1e-3,
@@ -73,6 +73,8 @@ class Experiment:
             self.model = GINE(self.args).to(self.args.device)
         elif self.args.layer_type == "GPS":
             self.model = GPS(self.args).to(self.args.device)
+        elif self.args.layer_type == "SAN":
+            self.model = SANTransformer(self.args).to(self.args.device)
         else:
             self.model = GNN(self.args).to(self.args.device)
        
@@ -135,7 +137,10 @@ class Experiment:
                 graph = graph.to(self.args.device)
                 y = graph.y.to(self.args.device)
 
-                out = self.model(graph.x, graph.edge_index, graph.edge_attr, graph.batch)
+                if self.args.layer_type == "SAN":
+                    out = self.model(graph)
+                else:
+                    out = self.model(graph.x, graph.edge_index, graph.edge_attr, graph.batch)
                 # loss = self.loss_fn(input=out, target=y)
                 loss = (out.squeeze() - y).abs().mean()
                 total_loss += loss
@@ -215,7 +220,10 @@ class Experiment:
             for graph in loader:
                 graph = graph.to(self.args.device)
                 y = graph.y.to(self.args.device)
-                out = self.model(graph.x, graph.edge_index, graph.edge_attr, graph.batch)
+                if self.args.layer_type in ["SAN", "Graphormer"]:
+                    out = self.model(graph)
+                else:
+                    out = self.model(graph.x, graph.edge_index, graph.edge_attr, graph.batch)
                 # _, pred = out.max(dim=1)
                 error = (out.squeeze() - y).abs().mean()
                 total_mae += error.item() * graph.num_graphs

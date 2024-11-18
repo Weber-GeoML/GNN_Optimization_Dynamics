@@ -1,10 +1,12 @@
 import argparse
 import ast
+import yaml
 from attrdict import AttrDict
 
 def get_args_from_input():
 	parser = argparse.ArgumentParser(description='modify network parameters', argument_default=argparse.SUPPRESS)
 
+	parser.add_argument('--config_path', default='config.yml', metavar='', type=str, help='Path to config file')
 	parser.add_argument('--learning_rate', metavar='', type=float, help='learning rate')
 	parser.add_argument('--max_epochs', metavar='', type=int, help='maximum number of epochs for training')
 	parser.add_argument('--layer_type', metavar='', help='type of layer in GNN (GCN, GIN, GAT, etc.)')
@@ -37,3 +39,8 @@ def get_args_from_input():
 	parser.add_argument('--encoding', type=str, help='type of encoding to use for node features')
 	arg_values = parser.parse_args()
 	return AttrDict(vars(arg_values))
+
+def get_args_from_config(config='config.yml'):
+	with open(config, 'r') as f:
+		config_data = yaml.safe_load(f)
+	return AttrDict(config_data)

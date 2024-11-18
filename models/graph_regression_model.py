@@ -4,9 +4,13 @@ from measure_smoothing import dirichlet_normalized
 from torch.nn import ModuleList, Dropout, ReLU, BatchNorm1d, Embedding, Linear, ModuleList, Sequential
 from torch_geometric.nn import GCNConv, RGCNConv, SAGEConv, GatedGraphConv, GINConv, FiLMConv, global_mean_pool, GATConv, GINEConv, global_add_pool, GPSConv
 import torch.nn.functional as F
+from torch_geometric.graphgym.models.gnn import GNNPreMP
 
 from typing import Any, Dict, Optional
 from models.performer import PerformerAttention
+
+from layers.san_layer import SANLayer
+from layers.graphormer_layer import GraphormerLayer
 
 
 class RGATConv(torch.nn.Module):
@@ -182,6 +186,95 @@ class GINE(torch.nn.Module):
             # x = conv(x, edge_index, batch, attr)
             x = conv(x, edge_index)
         x = global_add_pool(x, batch)
+        return self.mlp(x)
+    
+
+class SANTransformer(torch.nn.Module):
+    def __init__(self, args):
+        super().__init__()
+        self.args = args
+        input_dim = args.input_dim
+        output_dim = args.output_dim
+        channels = args.hidden_dim
+
+        layers_pre_mp = args.pre_mp.n_layers
+        if layers_pre_mp > 0:
+            self.pre_mp = GNNPreMP(
+                input_dim, channels, layers_pre_mp)
+
+        fake_edge_emb = Embedding(1, channels)
+
+        layers = []
+        for _ in range(args.san.n_layers):
+            layers.append(SANLayer(gamma=args.san.gamma,
+                                in_dim=channels,
+                                out_dim=channels,
+                                num_heads=args.san.n_heads,
+                                full_graph=args.san.full_graph,
+                                fake_edge_emb=fake_edge_emb,
+                                dropout=args.san.dropout,
+                                layer_norm=args.san.layer_norm,
+                                batch_norm=args.san.batch_norm,
+                                residual=args.san.residual))
+        self.trf_layers = torch.nn.Sequential(*layers)
+
+        self.mlp = Sequential(
+            Linear(channels, channels // 2),
+            ReLU(),
+            Linear(channels // 2, channels // 4),
+            ReLU(),
+            Linear(channels // 4, output_dim),
+        )
+
+    def forward(self, data):
+        data = self.pre_mp(data)
+
+        for trf_layer in self.trf_layers:
+            data = trf_layer(data)
+            
+        x = global_add_pool(data.x, data.batch)
+        return self.mlp(x)
+
+
+class Graphormer(torch.nn.Module):
+    def __init__(self, args):
+        super().__init__()
+        self.args = args
+        input_dim = args.input_dim
+        output_dim = args.output_dim
+        channels = args.hidden_dim
+
+        layers_pre_mp = args.pre_mp.n_layers
+        if layers_pre_mp > 0:
+            self.pre_mp = GNNPreMP(
+                input_dim, channels, layers_pre_mp)
+            
+        layers = []
+        for _ in range(args.graphormer.n_layers):
+            layers.append(GraphormerLayer(
+                embed_dim=channels,
+                num_heads=args.graphormer.num_heads,
+                dropout=args.graphormer.dropout,
+                attention_dropout=args.graphormer.attention_dropout,
+                mlp_dropout=args.graphormer.mlp_dropout
+            ))
+        self.trf_layers = torch.nn.Sequential(*layers)
+
+        self.mlp = Sequential(
+            Linear(channels, channels // 2),
+            ReLU(),
+            Linear(channels // 2, channels // 4),
+            ReLU(),
+            Linear(channels // 4, output_dim),
+        )
+
+    def forward(self, data):
+        data = self.pre_mp(data)
+
+        for trf_layer in self.trf_layers:
+            data = trf_layer(data)
+            
+        x = global_add_pool(data.x, data.batch)
         return self.mlp(x)
 
 
