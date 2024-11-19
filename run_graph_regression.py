@@ -79,6 +79,11 @@ def log_to_file(message, filename="results/graph_regression.txt"):
     file.write(message)
     file.close()
 
+def feature_to_x(data):
+    if hasattr(data, 'features'):
+        data.x = data.features
+        del data.features  # Remove the 'feature' attribute
+    return data
 
 default_args = AttrDict({
     "config_path": None,
@@ -132,8 +137,13 @@ for key in datasets:
     print(f"TESTING: {key} ({args.rewiring} - layer {args.layer_type})")
 
     dataset = datasets[key]
-    
-    
+
+    #for i in range(len(dataset)):
+    #    dataset[i] = feature_to_x(dataset[i])
+    print(dataset[0])
+    dataset = [feature_to_x(data) for data in dataset]
+    print(dataset[0])
+    print(type(dataset))
     # encode the dataset using the given encoding, if args.encoding is not None
     if args.encoding in ["LAPE", "RWPE", "LCP", "LDP", "SUB", "EGO", "VN"]:
 
@@ -159,10 +169,10 @@ for key in datasets:
                 if args.encoding == "LAPE":
                     num_nodes = dataset[i].num_nodes
                     eigvecs = np.min([num_nodes, 8]) - 2
-                    transform = T.AddLaplacianEigenvectorPE(k=eigvecs)
+                    transform = T.AddLaplacianEigenvectorPE(k=eigvecs, attr_name=None)
 
                 elif args.encoding == "RWPE":
-                    transform = T.AddRandomWalkPE(walk_length=16)
+                    transform = T.AddRandomWalkPE(walk_length=16, attr_name=None)
 
                 elif args.encoding == "LDP":
                     transform = T.LocalDegreeProfile()

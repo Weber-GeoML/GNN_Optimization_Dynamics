@@ -138,11 +138,7 @@ class Experiment:
             for graph in train_loader:
                 graph = graph.to(self.args.device)
                 y = graph.y.to(self.args.device)
-                if not graph.x:
-                    graph.x = graph.features
-                    del graph.features
 
-                self.args.input_dim = graph.x.shape[1]
                 if not graph.edge_attr:
                     graph.edge_attr = torch.ones(graph.edge_index.shape[1], self.args.hidden_dim)
 
@@ -230,11 +226,7 @@ class Experiment:
             for graph in loader:
                 graph = graph.to(self.args.device)
                 y = graph.y.to(self.args.device)
-                if not graph.x:
-                    graph.x = graph.features
-                    del graph.features
 
-                self.args.input_dim = graph.x.shape[1]
                 if not graph.edge_attr:
                     graph.edge_attr = torch.ones(graph.edge_index.shape[1], self.args.hidden_dim)
 
