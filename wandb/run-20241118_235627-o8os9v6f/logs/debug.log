@@ -1,0 +1,27 @@
+2024-11-18 23:56:27,293 INFO    MainThread:3471403 [wandb_setup.py:_flush():79] Current SDK version is 0.18.7
+2024-11-18 23:56:27,293 INFO    MainThread:3471403 [wandb_setup.py:_flush():79] Configure stats pid to 3471403
+2024-11-18 23:56:27,296 INFO    MainThread:3471403 [wandb_setup.py:_flush():79] Loading settings from /n/home04/afeng/.config/wandb/settings
+2024-11-18 23:56:27,298 INFO    MainThread:3471403 [wandb_setup.py:_flush():79] Loading settings from /n/home04/afeng/GNN_Optimization_Dynamics/wandb/settings
+2024-11-18 23:56:27,298 INFO    MainThread:3471403 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-11-18 23:56:27,301 INFO    MainThread:3471403 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2024-11-18 23:56:27,301 INFO    MainThread:3471403 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'run_graph_regression.py', 'program_abspath': '/n/home04/afeng/GNN_Optimization_Dynamics/run_graph_regression.py', 'program': '/n/home04/afeng/GNN_Optimization_Dynamics/run_graph_regression.py'}
+2024-11-18 23:56:27,304 INFO    MainThread:3471403 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-11-18 23:56:27,304 INFO    MainThread:3471403 [wandb_setup.py:_flush():79] Applying login settings: {'api_key': '***REDACTED***'}
+2024-11-18 23:56:27,306 INFO    MainThread:3471403 [wandb_init.py:_log_setup():533] Logging user logs to /n/home04/afeng/GNN_Optimization_Dynamics/wandb/run-20241118_235627-o8os9v6f/logs/debug.log
+2024-11-18 23:56:27,309 INFO    MainThread:3471403 [wandb_init.py:_log_setup():534] Logging internal logs to /n/home04/afeng/GNN_Optimization_Dynamics/wandb/run-20241118_235627-o8os9v6f/logs/debug-internal.log
+2024-11-18 23:56:27,312 INFO    MainThread:3471403 [wandb_init.py:init():619] calling init triggers
+2024-11-18 23:56:27,314 INFO    MainThread:3471403 [wandb_init.py:init():626] wandb.init called with sweep_config: {}
+config: {'eps': 0.001, 'san': {'gamma': '1e-5', 'num_heads': 2, 'full_graph': True, 'dropout': 0.0, 'layer_norm': False, 'batch_norm': False, 'residual': True}, 'hidden_dim': 64, 'exphormer': None, 'layer_type': 'SANTransformer', 'borf_batch_add': 20, 'learning_rate': '1e-3', 'eval_every': 1, 'last_layer_fa': False, 'sdrf_remove_edges': False, 'graphormer': None, 'display': True, 'input_dim': 1, 'patience': 250, 'num_iterations': 1, 'dataset': 'max_complete', 'borf_batch_remove': 3, 'alpha': 0.1, 'num_trials': 1, 'num_splits': 3, 'dropout': 0.1, 'config_path': 'config.yml', 'encoding': '', 'num_layers': 16, 'rewiring': None, 'output_dim': 1}
+2024-11-18 23:56:27,317 INFO    MainThread:3471403 [wandb_init.py:init():669] starting backend
+2024-11-18 23:56:27,320 INFO    MainThread:3471403 [wandb_init.py:init():673] sending inform_init request
+2024-11-18 23:56:27,320 INFO    MainThread:3471403 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-11-18 23:56:27,323 INFO    MainThread:3471403 [wandb_init.py:init():686] backend started and connected
+2024-11-18 23:56:27,331 INFO    MainThread:3471403 [wandb_init.py:init():781] updated telemetry
+2024-11-18 23:56:27,458 INFO    MainThread:3471403 [wandb_init.py:init():814] communicating run to backend with 90.0 second timeout
+2024-11-18 23:56:27,747 INFO    MainThread:3471403 [wandb_init.py:init():867] starting run threads in backend
+2024-11-18 23:56:27,930 INFO    MainThread:3471403 [wandb_run.py:_console_start():2456] atexit reg
+2024-11-18 23:56:27,930 INFO    MainThread:3471403 [wandb_run.py:_redirect():2305] redirect: wrap_raw
+2024-11-18 23:56:27,932 INFO    MainThread:3471403 [wandb_run.py:_redirect():2370] Wrapping output streams.
+2024-11-18 23:56:27,935 INFO    MainThread:3471403 [wandb_run.py:_redirect():2395] Redirects installed.
+2024-11-18 23:56:27,941 INFO    MainThread:3471403 [wandb_init.py:init():911] run started, returning control to user process
+2024-11-18 23:56:27,971 WARNING MsgRouterThr:3471403 [router.py:message_loop():75] message_loop has been closed

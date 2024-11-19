@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/n/home04/afeng/GNN_Optimization_Dynamics/run_graph_regression.py", line 202, in <module>
+    train_acc, validation_acc, test_acc = Experiment(args=args, dataset=dataset).run()
+  File "/n/home04/afeng/GNN_Optimization_Dynamics/experiments/graph_regression.py", line 77, in __init__
+    self.model = SANTransformer(self.args).to(self.args.device)
+  File "/n/home04/afeng/GNN_Optimization_Dynamics/models/graph_regression_model.py", line 203, in __init__
+    for _ in range(args.san.n_layers):
+  File "/n/holylabs/LABS/mweber_lab/Lab/envs/GNN_optimization/lib/python3.9/site-packages/attrdict/mixins.py", line 80, in __getattr__
+    raise AttributeError(
+AttributeError: 'AttrDict' instance has no attribute 'n_layers'

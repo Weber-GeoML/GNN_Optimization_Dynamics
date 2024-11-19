@@ -4,7 +4,6 @@ from measure_smoothing import dirichlet_normalized
 from torch.nn import ModuleList, Dropout, ReLU, BatchNorm1d, Embedding, Linear, ModuleList, Sequential
 from torch_geometric.nn import GCNConv, RGCNConv, SAGEConv, GatedGraphConv, GINConv, FiLMConv, global_mean_pool, GATConv, GINEConv, global_add_pool, GPSConv
 import torch.nn.functional as F
-from torch_geometric.graphgym.models.gnn import GNNPreMP
 
 from typing import Any, Dict, Optional
 from models.performer import PerformerAttention
@@ -197,11 +196,7 @@ class SANTransformer(torch.nn.Module):
         output_dim = args.output_dim
         channels = args.hidden_dim
 
-        layers_pre_mp = args.pre_mp.n_layers
-        if layers_pre_mp > 0:
-            self.pre_mp = GNNPreMP(
-                input_dim, channels, layers_pre_mp)
-
+        self.node_emb = Embedding(input_dim, channels)
         fake_edge_emb = Embedding(1, channels)
 
         layers = []
@@ -227,7 +222,7 @@ class SANTransformer(torch.nn.Module):
         )
 
     def forward(self, data):
-        data = self.pre_mp(data)
+        data.x = self.node_emb(data.x.squeeze(-1))
 
         for trf_layer in self.trf_layers:
             data = trf_layer(data)

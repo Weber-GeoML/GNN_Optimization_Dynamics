@@ -1,24 +1,29 @@
 dataset: max_complete
-encoding: ""
-layer_type: "SAN"
+layer_type: "SANTransformer"
 num_trials: 1
 num_iterations: 1
 
-input_dim:
-output_dim: 
+encoding: ""
+input_dim: 1
+output_dim: 1
 hidden_dim: 64
 
 learning_rate: 1e-3
 display: True
 eval_every: 1
-rewiring: None
 patience: 250
 output_dim: 2
-eps: 0.001,
-last_layer_fa: False
+eps: 0.001
 
 san:
+  gamma: 1e-5
+  num_heads: 2
+  full_graph: True
+  dropout: 0.0
+  layer_norm: False
+  batch_norm: False
+  residual: True
 
-graphormer:
+graphormer: ~
 
-exphormer:
+exphormer: ~

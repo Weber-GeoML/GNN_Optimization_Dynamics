@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/n/home04/afeng/GNN_Optimization_Dynamics/run_graph_regression.py", line 202, in <module>
+    train_acc, validation_acc, test_acc = Experiment(args=args, dataset=dataset).run()
+  File "/n/home04/afeng/GNN_Optimization_Dynamics/experiments/graph_regression.py", line 63, in __init__
+    if not "edge_type" in graph.keys:
+TypeError: argument of type 'method' is not iterable

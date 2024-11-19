@@ -1,0 +1,36 @@
+{
+  "os": "Linux-4.18.0-513.18.1.el8_9.x86_64-x86_64-with-glibc2.28",
+  "python": "3.9.13",
+  "startedAt": "2024-11-19T04:57:48.797844Z",
+  "args": [
+    "--config_path",
+    "config.yml"
+  ],
+  "program": "/n/home04/afeng/GNN_Optimization_Dynamics/run_graph_regression.py",
+  "codePath": "run_graph_regression.py",
+  "git": {
+    "remote": "git@github.com:Weber-GeoML/GNN_Optimization_Dynamics.git",
+    "commit": "235883d8636d0f88c6e47cadcff61787f8bd7d91"
+  },
+  "email": "feng.amy1@gmail.com",
+  "root": "/n/home04/afeng/GNN_Optimization_Dynamics",
+  "host": "holylogin08.rc.fas.harvard.edu",
+  "username": "afeng",
+  "executable": "/n/holylabs/LABS/mweber_lab/Lab/envs/GNN_optimization/bin/python",
+  "codePathLocal": "run_graph_regression.py",
+  "cpu_count": 32,
+  "cpu_count_logical": 32,
+  "disk": {
+    "/": {
+      "total": "53660815360",
+      "used": "31272361984"
+    }
+  },
+  "memory": {
+    "total": "1081149636608"
+  },
+  "cpu": {
+    "count": 32,
+    "countLogical": 32
+  }
+}

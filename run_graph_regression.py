@@ -33,18 +33,18 @@ def _convert_lrgb(dataset: torch.Tensor) -> torch.Tensor:
     return Data(x = x, edge_index = edge_index, y = y, edge_attr = edge_attr)
 
 
-zinc_path = '/n/holyscratch01/mweber_lab/zinc'
-train_dataset = ZINC(zinc_path, subset=True, split='train')
-val_dataset = ZINC(zinc_path, subset=True, split='val')
-test_dataset = ZINC(zinc_path, subset=True, split='test')
-zinc = [train_dataset[i] for i in range(len(train_dataset))] + [val_dataset[i] for i in range(len(val_dataset))] + [test_dataset[i] for i in range(len(test_dataset))]
+#zinc_path = '/n/holyscratch01/mweber_lab/zinc'
+#train_dataset = ZINC(zinc_path, subset=True, split='train')
+#val_dataset = ZINC(zinc_path, subset=True, split='val')
+#test_dataset = ZINC(zinc_path, subset=True, split='test')
+#zinc = [train_dataset[i] for i in range(len(train_dataset))] + [val_dataset[i] for i in range(len(val_dataset))] + [test_dataset[i] for i in range(len(test_dataset))]
 
-lrgb_path = '/n/holyscratch01/mweber_lab/lrgb_datasets'
-peptides_zip_filepath = os.getcwd()
-peptides_train = torch.load(os.path.join(lrgb_path, "peptidesstruct", "train.pt"))
-peptides_val = torch.load(os.path.join(lrgb_path, "peptidesstruct", "val.pt"))
-peptides_test = torch.load(os.path.join(lrgb_path, "peptidesstruct", "test.pt"))
-peptides_struct = [_convert_lrgb(peptides_train[i]) for i in range(len(peptides_train))] + [_convert_lrgb(peptides_val[i]) for i in range(len(peptides_val))] + [_convert_lrgb(peptides_test[i]) for i in range(len(peptides_test))]
+#lrgb_path = '/n/holyscratch01/mweber_lab/lrgb_datasets'
+#peptides_zip_filepath = os.getcwd()
+#peptides_train = torch.load(os.path.join(lrgb_path, "peptidesstruct", "train.pt"))
+#peptides_val = torch.load(os.path.join(lrgb_path, "peptidesstruct", "val.pt"))
+#peptides_test = torch.load(os.path.join(lrgb_path, "peptidesstruct", "test.pt"))
+#peptides_struct = [_convert_lrgb(peptides_train[i]) for i in range(len(peptides_train))] + [_convert_lrgb(peptides_val[i]) for i in range(len(peptides_val))] + [_convert_lrgb(peptides_test[i]) for i in range(len(peptides_test))]
 
 max_degree_path = 'synthetic_data/max_degree_task'
 with open(os.path.join(max_degree_path, 'complete_graphs.pkl'), 'rb') as file:
@@ -70,8 +70,8 @@ with open(os.path.join(min_distance_path, 'regular_graphs.pkl'), 'rb') as file:
 with open(os.path.join(min_distance_path, 'tree_graphs.pkl'), 'rb') as file:
     min_tree = pickle.load(file)
 
-datasets = {"zinc": zinc, "peptides_struct": peptides_struct, "max_complete": max_complete, "max_cycle": max_cycle, "max_path": max_path, "max_regular": max_regular, "max_tree": max_tree, "min_complete": min_complete, "min_cycle": min_cycle, "min_path": min_path, "min_regular": min_regular, "min_tree": min_tree}
-
+#datasets = {"zinc": zinc, "peptides_struct": peptides_struct, "max_complete": max_complete, "max_cycle": max_cycle, "max_path": max_path, "max_regular": max_regular, "max_tree": max_tree, "min_complete": min_complete, "min_cycle": min_cycle, "min_path": min_path, "min_regular": min_regular, "min_tree": min_tree}
+datasets = {"max_complete": max_complete, "max_cycle": max_cycle, "max_path": max_path, "max_regular": max_regular, "max_tree": max_tree, "min_complete": min_complete, "min_cycle": min_cycle, "min_path": min_path, "min_regular": min_regular, "min_tree": min_tree}
 
 def log_to_file(message, filename="results/graph_regression.txt"):
     print(message)

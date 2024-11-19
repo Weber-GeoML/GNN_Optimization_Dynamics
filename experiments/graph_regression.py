@@ -60,7 +60,7 @@ class Experiment:
         if self.args.input_dim is None:
             self.args.input_dim = self.dataset[0].x.shape[1]
         for graph in self.dataset:
-            if not "edge_type" in graph.keys:
+            if not "edge_type" in graph.keys():
                 num_edges = graph.edge_index.shape[1]
                 graph.edge_type = torch.zeros(num_edges, dtype=int)
         if self.args.num_relations is None:
@@ -73,7 +73,7 @@ class Experiment:
             self.model = GINE(self.args).to(self.args.device)
         elif self.args.layer_type == "GPS":
             self.model = GPS(self.args).to(self.args.device)
-        elif self.args.layer_type == "SAN":
+        elif self.args.layer_type == "SANTransformer":
             self.model = SANTransformer(self.args).to(self.args.device)
         else:
             self.model = GNN(self.args).to(self.args.device)
@@ -137,7 +137,7 @@ class Experiment:
                 graph = graph.to(self.args.device)
                 y = graph.y.to(self.args.device)
 
-                if self.args.layer_type == "SAN":
+                if self.args.layer_type == "SANTransformer":
                     out = self.model(graph)
                 else:
                     out = self.model(graph.x, graph.edge_index, graph.edge_attr, graph.batch)
@@ -220,7 +220,7 @@ class Experiment:
             for graph in loader:
                 graph = graph.to(self.args.device)
                 y = graph.y.to(self.args.device)
-                if self.args.layer_type in ["SAN", "Graphormer"]:
+                if self.args.layer_type in ["SANTransformer", "Graphormer"]:
                     out = self.model(graph)
                 else:
                     out = self.model(graph.x, graph.edge_index, graph.edge_attr, graph.batch)
