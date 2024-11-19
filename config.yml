@@ -1,4 +1,4 @@
-dataset: 
+dataset:
   - max_complete
   - max_cycle
   - max_path
@@ -10,7 +10,7 @@ dataset:
   - min_regular
   - min_tree
 
-layer_type: "Graphormer"
+layer_type: "SANTransformer"
 num_trials: 1
 num_iterations: 1
 
@@ -29,16 +29,16 @@ eps: 0.001
 san:
   n_layers: 5
   gamma: 1.0e-5
-  n_heads: 2
-  full_graph: True
+  n_heads: 4
+  full_graph: False
   dropout: 0.0
   layer_norm: False
   batch_norm: False
-  residual: True
+  residual: False
 
 graphormer:
   n_layers: 5
-  n_heads: 2
+  n_heads: 4
   dropout: 0.0
   attention_dropout: 0.0
   mlp_dropout: 0.0
