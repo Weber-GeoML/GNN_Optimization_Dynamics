@@ -14,7 +14,7 @@ import wandb
 import random
 from torch.utils.data import Dataset, Subset
 
-from models.graph_regression_model import GNN, GINE, GPS, SANTransformer
+from models.graph_regression_model import GNN, GINE, GPS, SANTransformer, Graphormer
 
 default_args = AttrDict(
     {"learning_rate": 1e-3,
@@ -75,6 +75,8 @@ class Experiment:
             self.model = GPS(self.args).to(self.args.device)
         elif self.args.layer_type == "SANTransformer":
             self.model = SANTransformer(self.args).to(self.args.device)
+        elif self.args.layer_type == "Graphormer":
+            self.model = Graphormer(self.args).to(self.args.device)
         else:
             self.model = GNN(self.args).to(self.args.device)
        
@@ -136,8 +138,16 @@ class Experiment:
             for graph in train_loader:
                 graph = graph.to(self.args.device)
                 y = graph.y.to(self.args.device)
+                if not graph.x:
+                    graph.x = graph.features
+                    del graph.features
 
-                if self.args.layer_type == "SANTransformer":
+                self.args.input_dim = graph.x.shape[1]
+                if not graph.edge_attr:
+                    graph.edge_attr = torch.ones(graph.edge_index.shape[1], self.args.hidden_dim)
+
+                if self.args.layer_type in ["SANTransformer", "Graphormer"]:
+                    print(graph)
                     out = self.model(graph)
                 else:
                     out = self.model(graph.x, graph.edge_index, graph.edge_attr, graph.batch)
@@ -220,6 +230,14 @@ class Experiment:
             for graph in loader:
                 graph = graph.to(self.args.device)
                 y = graph.y.to(self.args.device)
+                if not graph.x:
+                    graph.x = graph.features
+                    del graph.features
+
+                self.args.input_dim = graph.x.shape[1]
+                if not graph.edge_attr:
+                    graph.edge_attr = torch.ones(graph.edge_index.shape[1], self.args.hidden_dim)
+
                 if self.args.layer_type in ["SANTransformer", "Graphormer"]:
                     out = self.model(graph)
                 else:

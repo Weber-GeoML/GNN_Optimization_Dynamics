@@ -196,7 +196,7 @@ class SANTransformer(torch.nn.Module):
         output_dim = args.output_dim
         channels = args.hidden_dim
 
-        self.node_emb = Embedding(input_dim, channels)
+        self.pre_mp = GCNConv(input_dim, channels)
         fake_edge_emb = Embedding(1, channels)
 
         layers = []
@@ -222,7 +222,7 @@ class SANTransformer(torch.nn.Module):
         )
 
     def forward(self, data):
-        data.x = self.node_emb(data.x.squeeze(-1))
+        data.x = self.pre_mp(data.x.float(), data.edge_index)
 
         for trf_layer in self.trf_layers:
             data = trf_layer(data)
@@ -239,16 +239,13 @@ class Graphormer(torch.nn.Module):
         output_dim = args.output_dim
         channels = args.hidden_dim
 
-        layers_pre_mp = args.pre_mp.n_layers
-        if layers_pre_mp > 0:
-            self.pre_mp = GNNPreMP(
-                input_dim, channels, layers_pre_mp)
+        self.pre_mp = GCNConv(input_dim, channels)
             
         layers = []
         for _ in range(args.graphormer.n_layers):
             layers.append(GraphormerLayer(
                 embed_dim=channels,
-                num_heads=args.graphormer.num_heads,
+                num_heads=args.graphormer.n_heads,
                 dropout=args.graphormer.dropout,
                 attention_dropout=args.graphormer.attention_dropout,
                 mlp_dropout=args.graphormer.mlp_dropout
@@ -264,7 +261,7 @@ class Graphormer(torch.nn.Module):
         )
 
     def forward(self, data):
-        data = self.pre_mp(data)
+        data.x = self.pre_mp(data.x.float(), data.edge_index)
 
         for trf_layer in self.trf_layers:
             data = trf_layer(data)
@@ -322,6 +319,7 @@ class GPS(torch.nn.Module):
 
     # def forward(self, x, pe, edge_index, edge_attr, batch):
     def forward(self, x, edge_index, edge_attr, batch):
+        #print(x.shape)
         x = self.node_emb(x.squeeze(-1))
         attr = self.edge_emb(edge_attr)
 

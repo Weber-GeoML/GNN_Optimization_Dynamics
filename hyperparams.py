@@ -6,7 +6,7 @@ from attrdict import AttrDict
 def get_args_from_input():
 	parser = argparse.ArgumentParser(description='modify network parameters', argument_default=argparse.SUPPRESS)
 
-	parser.add_argument('--config_path', default='config.yml', metavar='', type=str, help='Path to config file')
+	parser.add_argument('--config_path', metavar='', type=str, help='Path to config file')
 	parser.add_argument('--learning_rate', metavar='', type=float, help='learning rate')
 	parser.add_argument('--max_epochs', metavar='', type=int, help='maximum number of epochs for training')
 	parser.add_argument('--layer_type', metavar='', help='type of layer in GNN (GCN, GIN, GAT, etc.)')
@@ -40,7 +40,29 @@ def get_args_from_input():
 	arg_values = parser.parse_args()
 	return AttrDict(vars(arg_values))
 
-def get_args_from_config(config='config.yml'):
+def convert_to_type(value, expected_type):
+    if expected_type == int:
+        return int(value)
+    elif expected_type == float:
+        return float(value)
+    elif expected_type == bool:
+        return value.lower() in ['true', '1', 't', 'y', 'yes']
+    elif expected_type == list:
+        return value.split(',')
+    return value 
+
+type_mapping = {
+    'some_integer_field': int,
+    'some_float_field': float,
+    'some_bool_field': bool,
+    'some_list_field': list
+}
+
+def get_args_from_config(config, type_mapping=None):
 	with open(config, 'r') as f:
 		config_data = yaml.safe_load(f)
+
+#	if type_mapping:
+#		config_data = convert_config_types(config_data, type_mapping)
+
 	return AttrDict(config_data)

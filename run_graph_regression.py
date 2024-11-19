@@ -121,8 +121,7 @@ if args.config_path:
 
 if args.dataset:
     # restricts to just the given dataset if this mode is chosen
-    name = args.dataset
-    datasets = {name: datasets[name]}
+    datasets = {name: datasets[name] for name in args.dataset}
 
 for key in datasets:
     args += hyperparams[key]
