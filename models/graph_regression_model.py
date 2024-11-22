@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from measure_smoothing import dirichlet_normalized
 from torch.nn import ModuleList, Dropout, ReLU, BatchNorm1d, Embedding, Linear, ModuleList, Sequential
-from torch_geometric.nn import GCNConv, RGCNConv, SAGEConv, GatedGraphConv, GINConv, FiLMConv, global_mean_pool, GATConv, GINEConv, global_add_pool, GPSConv
+from torch_geometric.nn import GCNConv, RGCNConv, SAGEConv, GatedGraphConv, GINConv, FiLMConv, global_mean_pool, GATConv, GINEConv, global_add_pool, GPSConv, global_max_pool
 import torch.nn.functional as F
 
 from typing import Any, Dict, Optional
@@ -196,7 +196,7 @@ class SANTransformer(torch.nn.Module):
         output_dim = args.output_dim
         channels = args.hidden_dim
 
-        self.pre_mp = GCNConv(input_dim, channels)
+        self.pre_mp = Linear(input_dim, channels)
         fake_edge_emb = Embedding(1, channels)
 
         layers = []
@@ -221,13 +221,20 @@ class SANTransformer(torch.nn.Module):
             Linear(channels // 4, output_dim),
         )
 
+        if args.global_pool == 'add':
+            self.global_pool = global_add_pool()
+        elif args.global_pool == 'mean':
+            self.global_pool = global_mean_pool()
+        elif args.global_pool == 'max':
+            self.global_pool = global_max_pool()
+
     def forward(self, data):
         data.x = self.pre_mp(data.x.float(), data.edge_index)
 
         for trf_layer in self.trf_layers:
             data = trf_layer(data)
             
-        x = global_add_pool(data.x, data.batch)
+        x = self.global_pool(data.x, data.batch)
         return self.mlp(x)
 
 
@@ -239,7 +246,7 @@ class Graphormer(torch.nn.Module):
         output_dim = args.output_dim
         channels = args.hidden_dim
 
-        self.pre_mp = GCNConv(input_dim, channels)
+        self.pre_mp = Linear(input_dim, channels)
             
         layers = []
         for _ in range(args.graphormer.n_layers):
@@ -259,6 +266,13 @@ class Graphormer(torch.nn.Module):
             ReLU(),
             Linear(channels // 4, output_dim),
         )
+        
+        if args.global_pool == 'add':
+            self.global_pool = global_add_pool()
+        elif args.global_pool == 'mean':
+            self.global_pool = global_mean_pool()
+        elif args.global_pool == 'max':
+            self.global_pool = global_max_pool()
 
     def forward(self, data):
         data.x = self.pre_mp(data.x.float(), data.edge_index)
@@ -266,7 +280,7 @@ class Graphormer(torch.nn.Module):
         for trf_layer in self.trf_layers:
             data = trf_layer(data)
             
-        x = global_add_pool(data.x, data.batch)
+        x = self.global_pool(data.x, data.batch)
         return self.mlp(x)
 
 

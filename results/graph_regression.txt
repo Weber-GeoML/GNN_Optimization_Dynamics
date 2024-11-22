@@ -6,3 +6,135 @@ RESULTS FOR peptides_struct (None), 1 ITERATIONS:
 average acc: 0.32625453456028086
 plus/minus:  0.0
 
+RESULTS FOR max_complete (None), 1 ITERATIONS:
+average acc: 0.35090472459793093
+plus/minus:  0.0
+
+RESULTS FOR max_complete (None), 1 ITERATIONS:
+average acc: 0.693138292312622
+plus/minus:  0.0
+
+RESULTS FOR max_cycle (None), 1 ITERATIONS:
+average acc: 0.5550474872589112
+plus/minus:  0.0
+
+RESULTS FOR max_cycle (None), 1 ITERATIONS:
+average acc: 0.44534768891334536
+plus/minus:  0.0
+
+RESULTS FOR max_path (None), 1 ITERATIONS:
+average acc: 0.5050827794075012
+plus/minus:  0.0
+
+RESULTS FOR max_path (None), 1 ITERATIONS:
+average acc: 0.533110375881195
+plus/minus:  0.0
+
+RESULTS FOR max_complete (None), 1 ITERATIONS:
+average acc: 0.4135470857620239
+plus/minus:  0.0
+
+RESULTS FOR max_complete (None), 1 ITERATIONS:
+average acc: 0.3254572169780731
+plus/minus:  0.0
+
+RESULTS FOR max_cycle (None), 1 ITERATIONS:
+average acc: 0.38324141907691955
+plus/minus:  0.0
+
+RESULTS FOR max_complete (None), 1 ITERATIONS:
+average acc: 0.2632001447677612
+plus/minus:  0.0
+
+RESULTS FOR max_complete (None), 1 ITERATIONS:
+average acc: 0.31810499238967893
+plus/minus:  0.0
+
+RESULTS FOR max_cycle (None), 1 ITERATIONS:
+average acc: 0.6883368859291077
+plus/minus:  0.0
+
+RESULTS FOR max_cycle (None), 1 ITERATIONS:
+average acc: 0.004614702742546797
+plus/minus:  0.0
+
+RESULTS FOR max_path (None), 1 ITERATIONS:
+average acc: 0.5608848609924316
+plus/minus:  0.0
+
+RESULTS FOR max_cycle (None), 1 ITERATIONS:
+average acc: 0.0017971716187894344
+plus/minus:  0.0
+
+RESULTS FOR max_path (None), 1 ITERATIONS:
+average acc: 0.583761522769928
+plus/minus:  0.0
+
+RESULTS FOR max_path (None), 1 ITERATIONS:
+average acc: 0.007167931526899338
+plus/minus:  0.0
+
+RESULTS FOR max_path (None), 1 ITERATIONS:
+average acc: 0.038902904778718946
+plus/minus:  0.0
+
+RESULTS FOR max_regular (None), 1 ITERATIONS:
+average acc: 1.4974045124053954
+plus/minus:  0.0
+
+RESULTS FOR max_regular (None), 1 ITERATIONS:
+average acc: 1.3828798418045043
+plus/minus:  0.0
+
+RESULTS FOR max_regular (None), 1 ITERATIONS:
+average acc: 0.02199578681588173
+plus/minus:  0.0
+
+RESULTS FOR max_regular (None), 1 ITERATIONS:
+average acc: 0.20329167699813844
+plus/minus:  0.0
+
+RESULTS FOR max_tree (None), 1 ITERATIONS:
+average acc: 0.8474120917320251
+plus/minus:  0.0
+
+RESULTS FOR max_tree (None), 1 ITERATIONS:
+average acc: 0.002115052215754986
+plus/minus:  0.0
+
+RESULTS FOR max_tree (None), 1 ITERATIONS:
+average acc: 0.9530620136260987
+plus/minus:  0.0
+
+RESULTS FOR max_tree (None), 1 ITERATIONS:
+average acc: 0.007267250046133995
+plus/minus:  0.0
+
+RESULTS FOR max_regular (None), 1 ITERATIONS:
+average acc: 1.1706588668823241
+plus/minus:  0.0
+
+RESULTS FOR max_regular (None), 1 ITERATIONS:
+average acc: 1.1058138942718505
+plus/minus:  0.0
+
+RESULTS FOR min_complete (None), 1 ITERATIONS:
+average acc: 0.007935258716344833
+plus/minus:  0.0
+
+RESULTS FOR max_tree (None), 1 ITERATIONS:
+average acc: 0.7313771533966065
+plus/minus:  0.0
+
+RESULTS FOR min_complete (None), 1 ITERATIONS:
+average acc: 0.00045837116171605884
+plus/minus:  0.0
+
+RESULTS FOR max_tree (None), 1 ITERATIONS:
+average acc: 0.7751122779846191
+plus/minus:  0.0
+
+RESULTS FOR min_complete (None), 1 ITERATIONS:
+average acc: 0.04897243481874466
+plus/minus:  0.0
+
