@@ -138,3 +138,956 @@ RESULTS FOR min_complete (None), 1 ITERATIONS:
 average acc: 0.04897243481874466
 plus/minus:  0.0
 
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 0.4571593499183655
+plus/minus:  0.0
+
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 0.6505367064476013
+plus/minus:  0.0
+
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 0.4858905005455017
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_cycle max_cycle (None), 1 ITERATIONS:
+average acc: 0.31809708261489866
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_path max_path (None), 1 ITERATIONS:
+average acc: 0.31240841913223266
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_regular max_regular (None), 1 ITERATIONS:
+average acc: 0.5174434938430786
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_tree max_tree (None), 1 ITERATIONS:
+average acc: 0.5593558654785157
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 0.34055241441726686
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_cycle max_cycle (None), 1 ITERATIONS:
+average acc: 0.25912332034111024
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_path max_path (None), 1 ITERATIONS:
+average acc: 0.3450277831554413
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_regular max_regular (None), 1 ITERATIONS:
+average acc: 1.021850503921509
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_tree max_tree (None), 1 ITERATIONS:
+average acc: 0.5452616667747497
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR min_complete min_complete (None), 1 ITERATIONS:
+average acc: 0.01159969187527895
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 0.6614129757881164
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: add
+RESULTS FOR max_cycle max_cycle (None), 1 ITERATIONS:
+average acc: 0.43063806104660035
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: add
+RESULTS FOR max_path max_path (None), 1 ITERATIONS:
+average acc: 0.510616643667221
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: add
+RESULTS FOR max_regular max_regular (None), 1 ITERATIONS:
+average acc: 1.0936606292724609
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: add
+RESULTS FOR max_tree max_tree (None), 1 ITERATIONS:
+average acc: 0.6550767092704773
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: add
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 0.3159895696640015
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: add
+RESULTS FOR max_cycle max_cycle (None), 1 ITERATIONS:
+average acc: 0.37245877742767336
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: add
+RESULTS FOR max_path max_path (None), 1 ITERATIONS:
+average acc: 0.30102183508872987
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: add
+RESULTS FOR max_regular max_regular (None), 1 ITERATIONS:
+average acc: 1.1251973886489868
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: add
+RESULTS FOR max_tree max_tree (None), 1 ITERATIONS:
+average acc: 0.6579481163024903
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: add
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 12.079886184692382
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_cycle max_cycle (None), 1 ITERATIONS:
+average acc: 0.028932339519262315
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_path max_path (None), 1 ITERATIONS:
+average acc: 0.02284901437163353
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_regular max_regular (None), 1 ITERATIONS:
+average acc: 0.04118109902739525
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_tree max_tree (None), 1 ITERATIONS:
+average acc: 0.03820295077562332
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 14.791172744750977
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_cycle max_cycle (None), 1 ITERATIONS:
+average acc: 0.021685148030519484
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_path max_path (None), 1 ITERATIONS:
+average acc: 0.03210206028819084
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_regular max_regular (None), 1 ITERATIONS:
+average acc: 0.046308326572179793
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_tree max_tree (None), 1 ITERATIONS:
+average acc: 0.03629024907946587
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR min_complete min_complete (None), 1 ITERATIONS:
+average acc: 0.0001759438537992537
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 13.469144958496093
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_cycle max_cycle (None), 1 ITERATIONS:
+average acc: 0.030594808489084243
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_path max_path (None), 1 ITERATIONS:
+average acc: 0.03047391027212143
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_regular max_regular (None), 1 ITERATIONS:
+average acc: 0.0500106149315834
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_tree max_tree (None), 1 ITERATIONS:
+average acc: 0.0466652350127697
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 15.3618218460083
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_cycle max_cycle (None), 1 ITERATIONS:
+average acc: 0.029954762518405915
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_path max_path (None), 1 ITERATIONS:
+average acc: 0.03767226499319076
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_regular max_regular (None), 1 ITERATIONS:
+average acc: 0.05196238762140274
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_tree max_tree (None), 1 ITERATIONS:
+average acc: 0.04719354885816574
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_complete max_cycle (None), 1 ITERATIONS:
+average acc: 50.94603125
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_complete max_path (None), 1 ITERATIONS:
+average acc: 52.71543701171875
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_complete max_regular (None), 1 ITERATIONS:
+average acc: 166.80861682128906
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_complete max_tree (None), 1 ITERATIONS:
+average acc: 76.06650219726562
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 0.3614390752315521
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 10.795859512329102
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_cycle max_cycle (None), 1 ITERATIONS:
+average acc: 0.03570141214132309
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_path max_path (None), 1 ITERATIONS:
+average acc: 0.031041975557804108
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_cycle max_complete (None), 1 ITERATIONS:
+average acc: 52.42933801269531
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_cycle max_path (None), 1 ITERATIONS:
+average acc: 0.022468887358903886
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_complete max_path (None), 1 ITERATIONS:
+average acc: 52.93853985595703
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_cycle max_regular (None), 1 ITERATIONS:
+average acc: 1.9755138549804687
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_cycle max_tree (None), 1 ITERATIONS:
+average acc: 0.9922478847503662
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 11.987010124206543
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_cycle max_cycle (None), 1 ITERATIONS:
+average acc: 0.035593267530202866
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_path max_path (None), 1 ITERATIONS:
+average acc: 0.03545998179912567
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_regular max_regular (None), 1 ITERATIONS:
+average acc: 0.03982439479231834
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_tree max_tree (None), 1 ITERATIONS:
+average acc: 0.04104149281978607
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: 
+global_pool: max
+RESULTS FOR max_cycle max_path (None), 1 ITERATIONS:
+average acc: 0.0245195779055357
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_complete max_path (None), 1 ITERATIONS:
+average acc: 52.605796813964844
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_cycle max_regular (None), 1 ITERATIONS:
+average acc: 1.9682684755325317
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_complete max_regular (None), 1 ITERATIONS:
+average acc: 87.17602362060546
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_cycle max_tree (None), 1 ITERATIONS:
+average acc: 0.996403235912323
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_complete max_tree (None), 1 ITERATIONS:
+average acc: 62.95979867553711
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 13.05536669921875
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_cycle max_cycle (None), 1 ITERATIONS:
+average acc: 0.03260005611181259
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_path max_complete (None), 1 ITERATIONS:
+average acc: 52.43488610839844
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_path max_cycle (None), 1 ITERATIONS:
+average acc: 0.025242806255817412
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_path max_regular (None), 1 ITERATIONS:
+average acc: 1.9774306364059449
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_path max_tree (None), 1 ITERATIONS:
+average acc: 0.9912836771011353
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_regular max_complete (None), 1 ITERATIONS:
+average acc: 50.46605364990234
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_complete max_complete (None), 1 ITERATIONS:
+average acc: 14.889898132324218
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_cycle max_cycle (None), 1 ITERATIONS:
+average acc: 0.030627789422869683
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_path max_path (None), 1 ITERATIONS:
+average acc: 0.028885947927832605
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_tree max_complete (None), 1 ITERATIONS:
+average acc: 51.446486907958985
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_tree max_cycle (None), 1 ITERATIONS:
+average acc: 0.9850384368896484
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_tree max_path (None), 1 ITERATIONS:
+average acc: 0.984547511100769
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_tree max_regular (None), 1 ITERATIONS:
+average acc: 0.9793216681480408
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_regular max_cycle (None), 1 ITERATIONS:
+average acc: 1.9725520944595336
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: max
+RESULTS FOR max_cycle max_complete (None), 1 ITERATIONS:
+average acc: 52.43385601806641
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_path max_complete (None), 1 ITERATIONS:
+average acc: 52.43339727783203
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_path max_complete (None), 1 ITERATIONS:
+average acc: 52.48495455932617
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_cycle max_complete (None), 1 ITERATIONS:
+average acc: 52.483196685791015
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_cycle max_complete (None), 1 ITERATIONS:
+average acc: 52.398545532226564
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_path max_complete (None), 1 ITERATIONS:
+average acc: 52.405298400878905
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_complete max_cycle (None), 1 ITERATIONS:
+average acc: 50.965884796142575
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_complete max_cycle (None), 1 ITERATIONS:
+average acc: 51.254456665039065
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_complete max_cycle (None), 1 ITERATIONS:
+average acc: 51.03350332641602
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_tree max_complete (None), 1 ITERATIONS:
+average acc: 51.44698690795899
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_tree max_complete (None), 1 ITERATIONS:
+average acc: 51.66154382324219
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_tree max_complete (None), 1 ITERATIONS:
+average acc: 51.67814636230469
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_cycle max_path (None), 1 ITERATIONS:
+average acc: 0.028919294327497482
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_path max_cycle (None), 1 ITERATIONS:
+average acc: 0.13882264077663423
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_cycle max_path (None), 1 ITERATIONS:
+average acc: 0.21077385199069976
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_cycle max_path (None), 1 ITERATIONS:
+average acc: 0.28569032287597657
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_path max_cycle (None), 1 ITERATIONS:
+average acc: 0.019554489821195602
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_path max_cycle (None), 1 ITERATIONS:
+average acc: 0.15348492741584777
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_complete max_path (None), 1 ITERATIONS:
+average acc: 52.82643695068359
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_tree max_cycle (None), 1 ITERATIONS:
+average acc: 0.9865793070793152
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_tree max_cycle (None), 1 ITERATIONS:
+average acc: 0.9101096968650818
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_complete max_path (None), 1 ITERATIONS:
+average acc: 52.92367544555664
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_complete max_path (None), 1 ITERATIONS:
+average acc: 52.28748406982422
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_tree max_cycle (None), 1 ITERATIONS:
+average acc: 0.7990416045188904
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_tree max_path (None), 1 ITERATIONS:
+average acc: 0.9609580707550048
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_tree max_path (None), 1 ITERATIONS:
+average acc: 0.9867442374229431
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_tree max_path (None), 1 ITERATIONS:
+average acc: 0.8119938783645629
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_cycle max_regular (None), 1 ITERATIONS:
+average acc: 1.9806091976165772
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_cycle max_regular (None), 1 ITERATIONS:
+average acc: 1.3810484428405763
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_path max_regular (None), 1 ITERATIONS:
+average acc: 1.3059499607086182
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_cycle max_regular (None), 1 ITERATIONS:
+average acc: 1.4234650707244874
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_path max_regular (None), 1 ITERATIONS:
+average acc: 1.394870864868164
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_path max_regular (None), 1 ITERATIONS:
+average acc: 1.9719620399475097
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_complete max_regular (None), 1 ITERATIONS:
+average acc: 166.94171728515624
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_complete max_regular (None), 1 ITERATIONS:
+average acc: 167.21923474121093
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_cycle max_tree (None), 1 ITERATIONS:
+average acc: 0.9929679818153382
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_cycle max_tree (None), 1 ITERATIONS:
+average acc: 0.8288756585121155
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_path max_tree (None), 1 ITERATIONS:
+average acc: 0.832257568359375
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_cycle max_tree (None), 1 ITERATIONS:
+average acc: 0.8063302373886109
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_complete max_regular (None), 1 ITERATIONS:
+average acc: 83.18663464355468
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_path max_tree (None), 1 ITERATIONS:
+average acc: 0.8213222823143005
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_path max_tree (None), 1 ITERATIONS:
+average acc: 0.9953803687095643
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_regular max_complete (None), 1 ITERATIONS:
+average acc: 50.42273641967773
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_regular max_complete (None), 1 ITERATIONS:
+average acc: 50.45703076171875
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_regular max_complete (None), 1 ITERATIONS:
+average acc: 50.760048797607425
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_tree max_regular (None), 1 ITERATIONS:
+average acc: 1.4888131275177001
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_complete max_tree (None), 1 ITERATIONS:
+average acc: 76.09146325683594
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add
+RESULTS FOR max_complete max_tree (None), 1 ITERATIONS:
+average acc: 75.94609460449219
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_tree max_regular (None), 1 ITERATIONS:
+average acc: 0.9896385335922241
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_tree max_regular (None), 1 ITERATIONS:
+average acc: 1.48387939453125
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_complete max_tree (None), 1 ITERATIONS:
+average acc: 63.61166174316406
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_regular max_cycle (None), 1 ITERATIONS:
+average acc: 1.685402554512024
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: None
+global_pool: add
+RESULTS FOR max_regular max_cycle (None), 1 ITERATIONS:
+average acc: 1.9784921741485595
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: max
+RESULTS FOR max_regular max_cycle (None), 1 ITERATIONS:
+average acc: 1.9221431531906128
+plus/minus:  0.0
+
+layer_type: Graphormer
+encoding: LAPE
+global_pool: add

@@ -222,14 +222,14 @@ class SANTransformer(torch.nn.Module):
         )
 
         if args.global_pool == 'add':
-            self.global_pool = global_add_pool()
+            self.global_pool = global_add_pool
         elif args.global_pool == 'mean':
-            self.global_pool = global_mean_pool()
+            self.global_pool = global_mean_pool
         elif args.global_pool == 'max':
-            self.global_pool = global_max_pool()
+            self.global_pool = global_max_pool
 
     def forward(self, data):
-        data.x = self.pre_mp(data.x.float(), data.edge_index)
+        data.x = self.pre_mp(data.x.float())
 
         for trf_layer in self.trf_layers:
             data = trf_layer(data)
@@ -268,14 +268,14 @@ class Graphormer(torch.nn.Module):
         )
         
         if args.global_pool == 'add':
-            self.global_pool = global_add_pool()
+            self.global_pool = global_add_pool
         elif args.global_pool == 'mean':
-            self.global_pool = global_mean_pool()
+            self.global_pool = global_mean_pool
         elif args.global_pool == 'max':
-            self.global_pool = global_max_pool()
+            self.global_pool = global_max_pool
 
     def forward(self, data):
-        data.x = self.pre_mp(data.x.float(), data.edge_index)
+        data.x = self.pre_mp(data.x.float())
 
         for trf_layer in self.trf_layers:
             data = trf_layer(data)

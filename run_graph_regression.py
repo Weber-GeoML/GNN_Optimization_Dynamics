@@ -73,7 +73,6 @@ with open(os.path.join(min_distance_path, 'tree_graphs.pkl'), 'rb') as file:
 
 #datasets = {"zinc": zinc, "peptides_struct": peptides_struct, "max_complete": max_complete, "max_cycle": max_cycle, "max_path": max_path, "max_regular": max_regular, "max_tree": max_tree, "min_complete": min_complete, "min_cycle": min_cycle, "min_path": min_path, "min_regular": min_regular, "min_tree": min_tree}
 all_datasets = {"max_complete": max_complete, "max_cycle": max_cycle, "max_path": max_path, "max_regular": max_regular, "max_tree": max_tree, "min_complete": min_complete, "min_cycle": min_cycle, "min_path": min_path, "min_regular": min_regular, "min_tree": min_tree}
-datasets = list(all_datasets.items())
 train_datasets = []
 test_datasets = []
 
@@ -105,13 +104,13 @@ default_args = AttrDict({
     "output_dim": 2,
     "alpha": 0.1,
     "eps": 0.001,
-    "dataset": None,
-    "train_dataset": None,
-    "test_dataset": None,
+    "datasets": None,
+    "train_datasets": None,
+    "test_datasets": None,
     "last_layer_fa": False,
-    "borf_batch_add" : 20,
-    "borf_batch_remove" : 3,
-    "sdrf_remove_edges" : False,
+    # "borf_batch_add" : 20,
+    # "borf_batch_remove" : 3,
+    # "sdrf_remove_edges" : False,
     "encoding" : None
 })
 
@@ -126,20 +125,28 @@ results = []
 args = default_args
 args += get_args_from_input()
 
-if args.config_path:
+# If none of datasets, train_datasets, and test_datasets are given, run on all datasets
+
+datasets = list(all_datasets.items())
+train_datasets = []
+test_datasets = []
+
+if hasattr(args, 'config_path'):
     args += get_args_from_config(config=args.config_path)
+
+if args.train_datasets and args.test_datasets:
+    datasets = []
+    train_datasets = [(name, all_datasets[name]) for name in args.train_datasets]
+    test_datasets = [(name, all_datasets[name]) for name in args.test_datasets]
 
 if args.datasets:
     datasets = [(name, all_datasets[name]) for name in args.datasets]
 
-if args.train_datasets:
-    train_datasets = [(name, all_datasets[name]) for name in args.train_datasets]
-
-if args.test_datasets:
-    test_datasets = [(name, all_datasets[name]) for name in args.test_datasets]
-
 train_datasets.extend(datasets)
 test_datasets.extend(datasets)
+
+print([d[0] for d in train_datasets])
+print([d[0] for d in test_datasets])
 
 # Make sure each training set has a corresponding test set
 assert(len(train_datasets) == len(test_datasets))
@@ -156,13 +163,16 @@ for i in range(len(train_datasets)):
     test_accuracies = []
     energies = []
 
+    args.train_name = train_name
+    args.test_name = test_name
+
     print(f"TESTING: {train_name} {test_name} ({args.rewiring} - layer {args.layer_type})")
 
     # encode the train and test datasets using the given encoding, if args.encoding is not None
     for dataset_type, pair in zip(["train", "test"], [train_datasets[i], test_datasets[i]]):
         name, dataset = pair
 
-        if args.encoding in ["LAPE", "RWPE", "LCP", "LDP", "SUB", "EGO", "VN"]:
+        if hasattr(args, 'encoding') and args.encoding in ["LAPE", "RWPE", "LCP", "LDP", "SUB", "EGO", "VN"]:
 
             if os.path.exists(f"data/{name}_{args.encoding}.pt"):
                 print('ENCODING ALREADY COMPLETED...')
@@ -220,9 +230,9 @@ for i in range(len(train_datasets)):
                 torch.save(dataset, f"data/{name}_{args.encoding}.pt")
 
         if dataset_type == "train":
-            train_datasets[i][1] = dataset
+            train_datasets[i] = (train_datasets[i][0], dataset)
         else:
-            test_datasets[i][1] = dataset
+            test_datasets[i] = (test_datasets[i][0], dataset)
 
     train_name, train_dataset = train_datasets[i]
     test_name, test_dataset = test_datasets[i]
@@ -264,17 +274,22 @@ for i in range(len(train_datasets)):
     log_to_file(f"RESULTS FOR {train_name} {test_name} ({args.rewiring}), {args.num_iterations} ITERATIONS:\n")
     log_to_file(f"average acc: {test_mean}\n")
     log_to_file(f"plus/minus:  {test_ci}\n\n")
+    log_to_file(f"layer_type: {args.layer_type}\n")
+    log_to_file(f"encoding: {args.encoding}\n")
+    log_to_file(f"global_pool: {args.global_pool}\n")
     results.append({
         "dataset": name,
         "train_dataset": train_name,
         "test_dataset": test_name,
-        "rewiring": args.rewiring,
+        "encoding": args.encoding,
+        "global_pool": args.global_pool,
+        #"rewiring": args.rewiring,
         "layer_type": args.layer_type,
         "num_iterations": args.num_iterations,
-        "borf_batch_add" : args.borf_batch_add,
-        "borf_batch_remove" : args.borf_batch_remove,
-        "sdrf_remove_edges" : args.sdrf_remove_edges, 
-        "alpha": args.alpha,
+        #"borf_batch_add" : args.borf_batch_add,
+        #"borf_batch_remove" : args.borf_batch_remove,
+        #"sdrf_remove_edges" : args.sdrf_remove_edges, 
+        #"alpha": args.alpha,
         "eps": args.eps,
         "test_mean": test_mean,
         "test_ci": test_ci,
