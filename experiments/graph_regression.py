@@ -45,6 +45,7 @@ default_args = AttrDict(
 class Experiment:
     def __init__(self, args=None, dataset=None, train_dataset=None, validation_dataset=None, test_dataset=None):
         wandb.init(project="gnn_optimization_dynamics", config=args)
+        
         self.args = default_args + args
         self.dataset = dataset
         self.train_dataset = train_dataset
@@ -110,8 +111,8 @@ class Experiment:
         elif self.validation_dataset is None:
             print("self.validation_dataset is None. Custom split will not be used.")
             train_size = int(self.args.train_fraction * len(self.train_dataset))
-            validation_size = len(self.args.train_data) - train_size
-            self.args.train_data, self.args.validation_data = random_split(self.args.train_data, [train_size, validation_size])
+            validation_size = len(self.train_dataset) - train_size
+            self.train_dataset, self.validation_dataset = random_split(self.train_dataset, [train_size, validation_size])
         
     def run(self):
         optimizer = torch.optim.Adam(self.model.parameters(), lr=self.args.learning_rate)

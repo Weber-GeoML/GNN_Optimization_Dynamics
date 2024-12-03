@@ -5,7 +5,7 @@ from attrdict import AttrDict
 
 def get_args_from_input():
 	parser = argparse.ArgumentParser(description='modify network parameters', argument_default=argparse.SUPPRESS)
-
+	parser.add_argument('--global_pool', type=str, help='type of global pooling layer to use')
 	parser.add_argument('--config_path', metavar='', type=str, help='Path to config file')
 	parser.add_argument('--learning_rate', metavar='', type=float, help='learning rate')
 	parser.add_argument('--max_epochs', metavar='', type=int, help='maximum number of epochs for training')
@@ -32,13 +32,13 @@ def get_args_from_input():
 	parser.add_argument('--alpha', type=float, help='alpha hyperparameter for DIGL')
 	parser.add_argument('--k', type=int, help='k hyperparameter for DIGL')
 	parser.add_argument('--eps', type=float, help='epsilon hyperparameter for DIGL')
-	parser.add_argument('--datasets', type=list, help='names of datasets to use')
-	parser.add_argument('--train_datasets', type=list, help='names of training datasets to use')
-	parser.add_argument('--test_datasets', type=list, help='names of testing datasets to use')
+	parser.add_argument('--datasets', nargs='*', type=str, help='names of datasets to use')
+	parser.add_argument('--train_datasets', nargs='*', type=str, help='names of training datasets to use')
+	parser.add_argument('--test_datasets', nargs='*', type=str, help='names of testing datasets to use')
 	parser.add_argument('--last_layer_fa', type=str, help='whether or not to make last layer fully adjacent')
 	parser.add_argument('--borf_batch_add', type=int)
 	parser.add_argument('--borf_batch_remove', type=int)
-	parser.add_argument('--encoding', type=str, help='type of encoding to use for node features')
+	parser.add_argument('--encoding', type=str, help='type of encoding to use for node features') 
 	arg_values = parser.parse_args()
 	return AttrDict(vars(arg_values))
 
