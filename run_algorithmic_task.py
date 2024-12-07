@@ -8,7 +8,7 @@ import torch_geometric.transforms as T
 from torchvision.transforms import Compose
 from custom_encodings import LocalCurvatureProfile, AltLocalCurvatureProfile
 
-from experiments.graph_regression import Experiment
+from experiments.algorithmic_tasks import Experiment
 
 from itertools import chain
 
